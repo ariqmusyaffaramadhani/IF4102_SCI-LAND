@@ -8,26 +8,14 @@ nav {
     margin-bottom: 20px;
 }
 
-.logo img {
-    float: left;
-    width: 40px;
-    margin-left: 20px;
-}
-
-.right {
-    float: right;
-    margin-right: 20px;
-    padding: 10px;
-}
-
-.right a {
+nav a {
     text-decoration: none;
     margin: 10px;
     color: white;
     font-size: 20px;
 }
 
-.right a:hover {
+nav a:hover {
     cursor: pointer;
     color: gray;
 }
@@ -40,10 +28,6 @@ nav {
     margin-left: 20%;
     margin-top: 5px;
 }
-
-/*h1 {
-    color: white; 
-}*/
 
 input[type=text] {
     margin-left: 30%;
