@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Edit Profil</title>
-<meta charset="utf-8">
-<style type="text/css">
-    .EditProfil {
-        margin: 100px auto;
-        width: 400px;
-        padding: 10px;
-        border: 3px solid #ccc;
-        background: white;
-    }
-    input[type=text] {
-        margin: 5px auto;
-        width: 95%;
-        padding: 10px;
-    }
-</style>
+    <title>Edit Profil</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="src/style.css">
 </head>
 <body>
-<div class="EditProfil">
-<form method="post" action="Berhasil.html">
-    <h1><strong><center>Edit Profil</strong></h1>
-    <input type="text" name="nama" placeholder="Masukan nama Anda"><br>
-    <input type="text" name="email" placeholder="Masukan email Anda"><br>
-    <input type="text" name="alamat" placeholder="Masukan alamat Anda"><br>
-    <input type="submit" name="simpan" value="Simpan">
-    <input type="reset" name="batal" value="Batal">
-</form>
-</div>
+    <nav>
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+        <div class="right">
+            <a href="">Daftar Buku</a>
+            <a href="">Pencarian Buku</a>
+            <a href="">Edit Profil</a>
+        </div>
+    </nav>
+    <div class="profil">
+        <h1><center>Edit Profil</center></h1>
+    <form method="post" action="Berhasil.html">
+        <input type="text" name="nama" placeholder="Nama"><br>
+        <input type="text" name="email" placeholder="Email"><br>
+        <input type="text" name="alamat" placeholder="Alamat"><br>
+    </form>
+    <center>
+        <button style="margin-right: 40px;">Batal</button>
+        <button>Simpan</button>
+    </center>
+    </div>
 </body>
 </html>
