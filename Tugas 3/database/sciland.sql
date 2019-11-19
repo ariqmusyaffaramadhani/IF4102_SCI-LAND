@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2019 at 04:49 PM
+-- Generation Time: Nov 19, 2019 at 05:40 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -31,7 +31,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `namaAdm` varchar(30) NOT NULL,
   `emailAdm` varchar(30) NOT NULL,
-  `alamatAdm` varchar(60) NOT NULL
+  `alamatAdm` varchar(60) NOT NULL,
+  `passAdm` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -41,9 +42,10 @@ CREATE TABLE `admin` (
 --
 
 CREATE TABLE `peminjam` (
-  `namaPem` varchar(30) NOT NULL,
-  `emailPem` varchar(30) NOT NULL,
-  `alamatPem` varchar(60) NOT NULL
+  `namaPjm` varchar(30) NOT NULL,
+  `emailPjm` varchar(30) NOT NULL,
+  `alamatPjm` varchar(60) NOT NULL,
+  `passPjm` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -54,7 +56,7 @@ CREATE TABLE `peminjam` (
 -- Indexes for table `peminjam`
 --
 ALTER TABLE `peminjam`
-  ADD PRIMARY KEY (`emailPem`);
+  ADD PRIMARY KEY (`emailPjm`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
