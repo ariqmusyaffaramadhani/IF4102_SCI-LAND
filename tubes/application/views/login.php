@@ -14,7 +14,7 @@
     </ul>
     <div class="tab-content">
         <div id="peminjam" class="tab-pane fade in active">
-            <form action="<?= site_url('pjmController/loginPeminjam') ?>" method="POST">
+            <form action="<?php site_url('pjmController/loginPeminjam') ?>" method="POST">
                 <div class="form-group">
                     <label for="email">Email P:</label>
                     <input type="email" class="form-control" id="emailPjm">
@@ -24,10 +24,11 @@
                     <input type="password" class="form-control" id="passPjm">
                 </div>
                 <button type="submit" class="btn btn-default">Submit</button>
+                <a href="<?php echo site_url('pjmController/pageRegis') ?>"><p>Daftar</p></a>
             </form>
         </div>
         <div class="tab-pane fade">
-            <form action="<?= site_url('admController/loginAdmin') ?>" method="POST">
+            <form action="<?php site_url('admController/loginAdmin') ?>" method="POST">
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" id="emailAdm">

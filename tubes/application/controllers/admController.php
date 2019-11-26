@@ -5,15 +5,21 @@ class admController extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('admModel');
-        $this->load->library('form_validation');
     }
 
     public function index() {
-        $this->load->view('homeAdmin');
+        $this->load->view('regisAdmin');
     }
 
+    public function home() {
+        $this->load->view('homeAdmin');
+    }
     public function listBuku() {
         $this->load->view('daftarBuku');
+    }
+
+    public function editAkun() {
+        $this->load->view('ekunAdmin');
     }
 
     public function regisAdmin() {
@@ -25,14 +31,45 @@ class admController extends CI_Controller {
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('regisAdmin');
         } else {
-            $this->adminModel->addAdmin();
-            redirect('admController');
+            $this->admModel->addAdmin();
+            redirect('admController/home');
         }
     }
 
     public function loginAdmin() {
+        $this->form_validation->set_rules('emailAdm','email','required');
+        $this->form_validation->set_rules('passAdm','password','required');
+        $dataAdm = $this->input->post('emailAdm');
 
+        if ($this->form_validation->run()) {
+            $dataAdm = $this->AdmModel->getAdminByEmail($emailAdm);
+            // cari akun sesuai email
+            if ($emailAsli) {
+                $passAdm = $this->input->post('passAdm');
+                // pass benar
+                if ($dataAdm['passAdm'] == $passAdm) {
+                    $sess_data = array(
+                        'namaAdm' => $data['namaAdm'],
+                        'emailAdm' => $data['emailAdm'],
+                        'alamatAdm' => $data['alamatAdm'],
+                        'passAdm' => $data['passAdm']
+                    );
+                    $this->session->set_userdata('datasessAdm',$sess_data);
+                    redirect('admController');
+                }
+                // pass salah
+                else {
+                    redirect('pjmController');
+                }
+            }
+            // email salah
+            else {
+                redirect('pjmController');
+            }
+        }
+        else {
+            $this->load->view('pjmController');
+        }
     }
-
 }
 ?>

@@ -4,7 +4,7 @@
     <title>Registrasi Peminjam</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>src/regis.css">
-    <link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>src/css/bootstrap.min.css">
 </head>
 <body>
     <div class="form">
@@ -25,7 +25,7 @@
                 <label for="pwd">Password:</label>
                 <input type="password" names="passPjm">
             </div>
-            <button type="submit"">Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </div>
     

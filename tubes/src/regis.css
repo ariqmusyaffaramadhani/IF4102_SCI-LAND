@@ -1,4 +1,4 @@
-.form {
+.regis {
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 10%;
@@ -10,10 +10,10 @@ input {
     margin-left: 30%;
     margin-right: 30%;
     margin-bottom: 5px;
-    width: 50%;
-    border: none;
+    width: 200px;
+    /* border: none; */
     line-height: 50px;
-    border-bottom: 3px solid #DDD;
+    /* border-bottom: 3px solid #DDD; */
     padding: 10px;
     border-radius : 6px;
 }

@@ -13,7 +13,7 @@ class pjmModel extends CI_Model {
         $this->db->insert('peminjam',$data);
     }
 
-    public function getPeminjam($emailPjm) {
+    public function getPeminjamByEmail($emailPjm) {
         $this->db->select('*');
         $this->db->from('peminjam');
         $this->db->where('emailPjm',$emailPjm);

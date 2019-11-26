@@ -13,7 +13,7 @@ class admModel extends CI_Model {
         $this->db->insert('admin',$data);
     }
 
-    public function getAdmin($emailAdm) {
+    public function getAdminByEmail($emailAdm) {
         $this->db->select('*');
         $this->db->from('admin');
         $this->db->where('emailAdm',$emailAdm);

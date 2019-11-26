@@ -53,4 +53,4 @@ $route['default_controller'] = 'pjmController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['menuAdmin'] = 'admController/regisAdmin';
+$route['admin'] = 'admController';
