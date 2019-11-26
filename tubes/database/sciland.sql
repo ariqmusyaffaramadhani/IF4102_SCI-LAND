@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2019 at 12:57 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: Nov 26, 2019 at 06:49 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,6 +46,23 @@ INSERT INTO `admin` (`namaAdm`, `emailAdm`, `alamatAdm`, `passAdm`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `buku`
+--
+
+CREATE TABLE `buku` (
+  `id_buku` varchar(10) NOT NULL,
+  `judul` varchar(255) NOT NULL,
+  `penulis` varchar(255) NOT NULL,
+  `penerbit` varchar(255) NOT NULL,
+  `jhal` int(10) NOT NULL,
+  `stock` int(10) NOT NULL,
+  `sinopsis` varchar(255) NOT NULL,
+  `imgpath` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `peminjam`
 --
 
@@ -59,6 +76,12 @@ CREATE TABLE `peminjam` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `buku`
+--
+ALTER TABLE `buku`
+  ADD PRIMARY KEY (`id_buku`);
 
 --
 -- Indexes for table `peminjam`

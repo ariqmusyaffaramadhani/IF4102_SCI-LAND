@@ -133,7 +133,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
 
                 <div class="form-group" style="padding-top: 2%;">
-                    <input type="number" class="form-control" id="jtersedia" placeholder="Jumlah Ketersediaan" style="margin-left: 10%; width: 81%;">
+                    <input type="number" class="form-control" id="stock" placeholder="Jumlah Ketersediaan" style="margin-left: 10%; width: 81%;">
                 </div>
 
                 
