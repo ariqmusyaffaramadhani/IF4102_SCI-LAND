@@ -1,6 +1,6 @@
 <?php
 
-  class C_Buku extends CI_Controller  {
+  class crud_book_C extends CI_Controller  {
     public function __construct() {
       parent::__construct();
       $this->load->model('M_Buku');
