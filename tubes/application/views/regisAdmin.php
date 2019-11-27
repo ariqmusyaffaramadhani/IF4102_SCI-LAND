@@ -44,13 +44,13 @@
   <div class="middle">
     <form class="form-horizontal" action="<?php echo site_url('admController/regisAdmin'); ?>" method="post" class="regis">
       <div class="form-group">
-        <label class="control-label col-sm-3" for="namaAdm">Nama Lengkap :</label>
+        <label class="control-label col-sm-3" for="nama">Nama Lengkap :</label>
         <div class="col-sm-6">
           <input type="namaAdm" class="form-control" id="namaAdm" placeholder="Nama Lengkap" name="namaAdm">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-3" for="emailAdm">Email :</label>
+        <label class="control-label col-sm-3" for="email">Email :</label>
         <div class="col-sm-6">
           <input type="email" class="form-control" id="emailAdm" placeholder="Enter email" name="emailAdm">
         </div>
@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-3" for="passAdm">Password :</label>
+        <label class="control-label col-sm-3" for="pwd">Password :</label>
         <div class="col-sm-6">
           <input type="password" class="form-control" id="passAdm" placeholder="Enter password" name="passAdm">
         </div>

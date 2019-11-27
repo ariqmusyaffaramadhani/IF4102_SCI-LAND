@@ -56,11 +56,11 @@
         <div id="peminjam" class="tab-pane fade in active">
             <form action="<?php echo site_url('pjmController/loginPeminjam'); ?>" method="POST">
               <div class="form-group">
-                  <label for="emailPjm">Email Peminjam:</label>
+                  <label for="email">Email Peminjam:</label>
                   <input type="email" class="form-control" id="emailPjm" placeholder="Enter Email" name="emailPjm">
               </div>
               <div class="form-group">
-                  <label for="passPjm">Password :</label>
+                  <label for="pwd">Password :</label>
                   <input type="password" class="form-control" id="passPjm" placeholder="Enter Password" name="passPjm">
               </div>
                 <button type="submit">Submit</button>
@@ -72,11 +72,11 @@
         <div id="admin" class="tab-pane fade in">
             <form action="<?php site_url('admController/loginAdmin') ?>" method="POST">
                 <div class="form-group">
-                    <label for="emailAdm">Email Admin:</label>
+                    <label for="email">Email Admin:</label>
                     <input type="email" class="form-control" id="emailAdm" placeholder="Enter Email" name="emailAdm">
                 </div>
                 <div class="form-group">
-                    <label for="passAdm">Password :</label>
+                    <label for="pwd">Password :</label>
                     <input type="password" class="form-control" id="passAdm" placeholder="Enter Password" name="passAdm">
                 </div>
                 <button type="submit">Submit</button>
