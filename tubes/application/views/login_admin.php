@@ -12,7 +12,7 @@
   </head>
   <body style="background-color:  #E2F0F1">
 <div class="container-fluid">
-	
+
 	<div class="mid_bar" align="center">
 		<form>
 			<h2>LOGIN ADMIN</h2>
