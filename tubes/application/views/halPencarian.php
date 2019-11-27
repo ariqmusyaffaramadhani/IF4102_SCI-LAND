@@ -39,6 +39,6 @@
   <body>
       <h1><center>Pencarian</center></h1>
       <input type="text" placeholder="Judul Buku"> <br> <br>
-      <button type="submit">Cari</button>
+      <button href="<?php echo site_url('C_buku/search') ?>" type="submit">Cari</button>
   </body>
 </html>

@@ -27,7 +27,6 @@
            font-size: 10px; }
   button:hover { cursor: pointer;
                  background-color: #13326D; }
-  #alamat { height: 30px; }
   .middle { border : solid 2px white;
            padding-top : 30px;
            padding-left : 30px;
