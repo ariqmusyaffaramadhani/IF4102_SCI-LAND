@@ -48,6 +48,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo site_url('pjmController/pageEdit'); ?>">Edit Profil</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo site_url('pjmController/logout'); ?>">Log Out</a>
+            </li>
         </ul>
     </nav>
     <div class="atas">

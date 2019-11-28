@@ -66,11 +66,11 @@
                 <button type="submit">Submit</button>
             </form>
               <h5>Belum memiliki akun?</h5>
-              <a href="<?php echo site_url('pjmController/pageRegis') ?>"><p>Daftar</p></a>
+              <a href="<?php echo site_url('pjmController/pageRegis'); ?>"><p>Daftar</p></a>
 
         </div>
         <div id="admin" class="tab-pane fade in">
-            <form action="<?php site_url('admController/loginAdmin') ?>" method="POST">
+            <form action="<?php echo site_url('admController/loginAdmin'); ?>" method="POST">
                 <div class="form-group">
                     <label for="email">Email Admin:</label>
                     <input type="email" class="form-control" id="emailAdm" placeholder="Enter Email" name="emailAdm">

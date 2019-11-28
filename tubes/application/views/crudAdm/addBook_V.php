@@ -99,7 +99,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </a>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('admController/editAkun'); ?>">Home</a>
+                <a class="nav-link" href="<?php echo site_url('admController/home'); ?>">Home</a>
             </li>
             
             <li class="nav-item">

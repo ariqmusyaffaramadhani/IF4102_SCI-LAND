@@ -34,9 +34,9 @@
     </nav>
     <div>
     <center>
-        <a href=""><button>Tambah</button></a> <br>
-        <a href=""><button>Ubah</button></a> <br>
-        <a href=""><button>Hapus</button></a>
+        <a href="<?php echo site_url('crud_book_C'); ?>"><button>Tambah</button></a> <br>
+        <a href="<?php echo site_url('crud_book_C'); ?>"><button>Ubah</button></a> <br>
+        <a href="<?php echo site_url('crud_book_C'); ?>"><button>Hapus</button></a>
     </center>
     </div>
 </body>

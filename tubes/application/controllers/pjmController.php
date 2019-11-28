@@ -31,6 +31,11 @@ class pjmController extends CI_Controller {
         $this->load->view('akunPeminjam');
     }
 
+    public function logout() {
+        $this->session->sess_destroy();
+        redirect('pjmController/login');
+    }
+
     public function regisPeminjam() {
         $this->form_validation->set_rules('namaPjm','Nama','required');
         $this->form_validation->set_rules('emailPjm','Alamat','required');

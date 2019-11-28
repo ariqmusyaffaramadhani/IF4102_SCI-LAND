@@ -19,7 +19,10 @@
                 <a class="nav-link" href="">2</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Edit Profil</a>
+                <a class="nav-link" href="<?php echo site_url('admControllwe/editAdmin'); ?>">Edit Profil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo site_url('admControllwe/logout'); ?>">Log Out</a>
             </li>
         </ul>
     </nav>

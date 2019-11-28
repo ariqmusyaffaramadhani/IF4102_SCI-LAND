@@ -20,6 +20,11 @@ class admModel extends CI_Model {
         $query = $this->db->get();
         return $query->row_array();
     }
+
+    public function editAdmin($emailAdm,$new) {
+        $this->db->where('emailAdm',$emailAdm);
+        $this->db->update('admin',$new);
+    }
 }
 
 ?>
