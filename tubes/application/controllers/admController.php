@@ -97,10 +97,10 @@ class admController extends CI_Controller {
                 "passAdm" => $this->input->post('passAdm',true)
             );
             $this->admModel->editAdmin($dataAkun['emailAdm'],$new);
-            redirect('AdmController/home');
+            redirect('admController/home');
  
         } else {
-            redirect('AdmController/pageEdit');
+            redirect('admController/pageEdit');
         }
     }
 }
