@@ -8,11 +8,11 @@ class pjmController extends CI_Controller {
     }
 
     public function index() {
-        $this->load->view('login');
+        $this->load->view('homePeminjam');
     }
 
-    public function home() {
-        $this->load->view('homePeminjam');
+    public function login() {
+        $this->load->view('login');
     }
 
     public function pageRegis() {
@@ -23,7 +23,11 @@ class pjmController extends CI_Controller {
         $this->load->view('daftarBuku');
     }
 
-    public function editAkun() {
+    public function cariBuku() {
+        $this->load->view('halPencarian');
+    }
+
+    public function pageEdit() {
         $this->load->view('akunPeminjam');
     }
 
@@ -37,43 +41,68 @@ class pjmController extends CI_Controller {
             $this->load->view('regisPeminjam');
         } else {
             $this->pjmModel->addPeminjam();
-            redirect('pjmController');
+            redirect('pjmController/login');
         }
     }
 
     public function loginPeminjam() {
         $this->form_validation->set_rules('emailPjm','email','required');
         $this->form_validation->set_rules('passPjm','password','required');
-        $dataPjm = $this->input->post('emailPjm');
+        $emailPjm = $this->input->post('emailPjm');
 
         if ($this->form_validation->run()) {
             $dataPjm = $this->pjmModel->getPeminjamByEmail($emailPjm);
             // cari akun sesuai email
-            if ($emailAsli) {
+            if ($dataPjm) {
                 $passPjm = $this->input->post('passPjm');
                 // pass benar
                 if ($dataPjm['passPjm'] == $passPjm) {
                     $sess_data = array(
-                        'namaPjm' => $data['namaPjm'],
-                        'emailPjm' => $data['emailPjm'],
-                        'alamatPjm' => $data['alamatPjm'],
-                        'passPjm' => $data['passPjm']
+                        'namaPjm' => $dataPjm['namaPjm'],
+                        'emailPjm' => $dataPjm['emailPjm'],
+                        'alamatPjm' => $dataPjm['alamatPjm'],
+                        'passPjm' => $dataPjm['passPjm']
                     );
-                    $this->session->set_userdata('datasessPjm',$sess_data);
-                    redirect('homePeminjam');
+                    $this->session->set_userdata('sessPjm',$sess_data);
+                    redirect('pjmController');
+                    // $this->load->view('homePeminjam',$dataAkun);
+
                 }
                 // pass salah
                 else {
-                    redirect('login');
+                    redirect('pjmController/login');
                 }
             }
             // email salah
             else {
-                redirect('login');
+                redirect('pjmController/login');
             }
         }
         else {
-            $this->load->view('pjmController');
+            redirect('pjmController/login');
+        }
+    }
+
+    public function editPeminjam() {
+        $dataAkun = $this->session->userdata('sessPjm');
+
+        $this->form_validation->set_rules('namaPjm','Nama','required');
+        $this->form_validation->set_rules('emailPjm','Email','required');
+        $this->form_validation->set_rules('alamatPjm','Alamat','required');
+        $this->form_validation->set_rules('passPjm','Password','required');
+
+        if ($this->form_validation->run()) {
+            $new = array(
+                "namaPjm" => $this->input->post('namaPjm',true),
+                "emailPjm" => $this->input->post('emailPjm',true),
+                "alamatPjm" => $this->input->post('alamatPjm',true),
+                "passPjm" => $this->input->post('passPjm',true)
+            );
+            $this->pjmModel->editPeminjam($dataAkun['emailPjm'],$new);
+            redirect('pjmController');
+ 
+        } else {
+            redirect('pjmController/pageEdit');
         }
     }
 }

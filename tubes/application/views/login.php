@@ -4,12 +4,12 @@
     <title>Login</title>
     <meta charset="utf-8">
     <!-- <link rel="stylesheet" type="text/css" href="src/style.css"> -->
-    <link rel="stylesheet" type="text/css" href="src/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>src/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script src="src/js/bootstrap.js"></script>
+    <script src="<?php echo base_url(); ?>src/js/bootstrap.js"></script>
     <style media="screen">
       body { background-color: #E2F0F1; }
       .atas { height: 100px;

@@ -20,6 +20,11 @@ class pjmModel extends CI_Model {
         $query = $this->db->get();
         return $query->row_array();
     }
+
+    public function editPeminjam($emailPjm,$new) {
+        $this->db->where('emailPjm',$emailPjm);
+        $this->db->update('peminjam',$new);
+    }
 }
 
 ?>

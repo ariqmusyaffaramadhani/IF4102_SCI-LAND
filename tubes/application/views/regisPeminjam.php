@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="form">
-        <form action="<?= site_url('pjmController/regisPeminjam') ?>" method="POST">
+        <form action="<?php echo site_url('pjmController/regisPeminjam'); ?>" method="POST">
             <div class="form-group">
                 <label for="nama">Nama:</label>
                 <input type="text" name="namaPjm">
@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label for="pwd">Password:</label>
-                <input type="password" names="passPjm">
+                <input type="password" name="passPjm">
             </div>
             <button type="submit">Submit</button>
         </form>
