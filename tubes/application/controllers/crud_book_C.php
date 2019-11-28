@@ -14,7 +14,8 @@
 
     public function addBookV(){
       $data['title'] = "Tambah Data Buku";
-        $this->load->view('crudAdm/addBook_V', $data);
+      $this->load->view('crudAdm/header', $data);  
+      $this->load->view('crudAdm/addBook_V');
     }
 
 
