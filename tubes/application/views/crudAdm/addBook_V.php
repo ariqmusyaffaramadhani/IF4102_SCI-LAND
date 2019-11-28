@@ -9,29 +9,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- form here -->
             <?= $this->session->flashdata('message');?>
 
-            <form method="POST" action="<?= site_url('crud_book_C/addBook'); ?>" accept-charset="UTF-8">
+            <form method="POST" action="<?= site_url('crud_book_C/addBook'); ?>" enctype="multipart/form-data" accept-charset="UTF-8">
                 <div class="form-group" style="padding-top: 8%;">
                     <input type="text" class="form-control" id="vidbook" name="vidbook" placeholder="ID" style="margin-left: 10%; width: 81%;">
+                    <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('vidbook'); ?> </font></div>
+                    
                 </div>
                 
                 <div class="form-group" style="padding-top: 2%;">
                     <input type="text" class="form-control" id="vjudul" name="vjudul" placeholder="Judul" style="margin-left: 10%; width: 81%;">
+                    <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('vjudul'); ?> </font></div>
                 </div>
                 
                 <div class="form-group" style="padding-top: 2%;">
                     <input type="text" class="form-control" id="vpenulis" name="vpenulis" placeholder="Penulis" style="margin-left: 10%; width: 81%;">
+                    <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('vpenulis'); ?> </font></div>
                 </div>
 
                 <div class="form-group" style="padding-top: 2%;">
                     <input type="text" class="form-control" id="vpenerbit" name="vpenerbit" placeholder="Penerbit" style="margin-left: 10%; width: 81%;">
+                    <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('vpenerbit'); ?> </font></div>
                 </div>
                 
                 <div class="form-group" style="padding-top: 2%;">
                     <input type="number" class="form-control" id="vjhal" name="vjhal" placeholder="Jumlah Halaman" style="margin-left: 10%; width: 81%;">
+                    <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('vjhal'); ?> </font></div>
                 </div>
 
                 <div class="form-group" style="padding-top: 2%;">
                     <input type="number" class="form-control" id="vstock" name="vstock" placeholder="Jumlah Ketersediaan" style="margin-left: 10%; width: 81%;">
+                    <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('vstock'); ?> </font></div>
                 </div>
 
                 

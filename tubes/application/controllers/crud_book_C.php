@@ -4,6 +4,7 @@
     public function __construct() {
       parent::__construct();
       $this->load->model('M_Buku');
+      $this->load->library('form_validation');
     }
 
     public function index(){
@@ -20,24 +21,76 @@
 
 
     public function addBook(){
-      $img = "default.jpeg";
-      $data = [
-        "id_buku" => $this->input->post('vidbook',true),
-        "judul" => $this->input->post('vjudul',true),
-        "penulis" => $this->input->post('vpenulis',true),
-        "penerbit" => $this->input->post('vpenerbit',true),
-        "jhal" => $this->input->post('vjhal',true),
-        "stock" => $this->input->post('vstock',true),
-        "sinopsis" => $this->input->post('vsinopsis',true),
-        "imgpath" => $img
-      ];
-
-      $this->M_Buku->addBuku($data);
-      $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
-			<b>Tambah buku sukses!</b>
-      </div>');
       
-      redirect("crud_book_C/addBookV");
+      $this->form_validation->set_rules('vidbook','id','required', [
+        'required' => 'id harus diisi!'
+      ]);
+      $this->form_validation->set_rules('vjudul','judul','required', [
+        'required' => 'judul harus diisi!'
+      ]);
+      $this->form_validation->set_rules('vpenulis','penulis','required', [
+        'required' => 'penulis harus diisi!'
+      ]);
+      $this->form_validation->set_rules('vpenerbit','penerbit','required', [
+        'required' => 'penerbit harus diisi!'
+      ]);
+      $this->form_validation->set_rules('vjhal','jhal','required', [
+        'required' => 'jumlah halaman harus diisi!'
+      ]);
+      $this->form_validation->set_rules('vstock','stock','required', [
+        'required' => 'jumlah stock harus diisi harus diisi!'
+      ]);
+
+      if ($this->form_validation->run() == false){
+        $data['title'] = "Tambah Data Buku";
+        $this->load->view('crudAdm/header', $data);  
+        $this->load->view('crudAdm/addBook_V');
+      }
+
+      else {
+        
+        $upload = $_FILES['vcover']['name'];
+
+        if ($upload){
+          $config['upload_path'] = './images/';
+          $config['allowed_types'] = 'gif|jpg|png|jpeg';
+          $config['file_name'] = $this->input->post('vidbook',true);
+          $config['max_size'] = '5000';
+          $config['overwrite'] = true;
+    
+          $this->load->library('upload', $config);
+
+          if ($this->upload->do_upload('vcover')){
+            $fname = $this->upload->data('file_name');
+          }
+          else {
+            $fname = "default.jpeg";
+            echo $this->upload->display_errors();
+          }
+
+        }
+
+        
+        $data = [
+          "id_buku" => $this->input->post('vidbook',true),
+          "judul" => $this->input->post('vjudul',true),
+          "penulis" => $this->input->post('vpenulis',true),
+          "penerbit" => $this->input->post('vpenerbit',true),
+          "jhal" => $this->input->post('vjhal',true),
+          "stock" => $this->input->post('vstock',true),
+          "sinopsis" => $this->input->post('vsinopsis',true),
+          "imgpath" => $fname
+        ];
+  
+        $this->M_Buku->addBuku($data);
+        $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
+        <b>Tambah buku sukses!</b>
+        </div>');
+        
+        redirect("crud_book_C/addBookV");
+      }
+      
+
     }
 
 
