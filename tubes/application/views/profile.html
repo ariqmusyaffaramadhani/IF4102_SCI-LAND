@@ -11,25 +11,14 @@
     <script src="<?php echo base_url(); ?>src/js/bootstrap.js"></script>
     <style media="screen">
       body { background-color: #E2F0F1; }
-      .atas { height: 100px;
-            background-color: #00A8A8;
-            width: 80%;
-            padding-top: 22px;
-            margin-left: 10%;
-            margin-top: 50px; }
-      b { color : white;
-          font-family : serif;
-          font-size : 40px; }
-      .middle { border : solid 2px white;
-                padding-top : 30px;
-                padding-left : 30px;
-                padding-right : 30px;
-                padding-bottom : 10px;
-                margin-left: 10%;
-                width: 80%;
-                background-color: white; }
-      .bottom { margin-top : 150px; }
+      .atas { height: 100px; background-color: #00A8A8; width: 80%; padding-top: 22px; margin-left: 10%; margin-top: 50px; }
+      b { color : white; font-family : serif; font-size : 40px; }
+      .middle { border : solid 2px white; padding-top : 30px; padding-left : 30px; padding-right : 30px; padding-bottom : 10px;
+        margin-left: 10%; width: 80%; height: 400px; background-color: white; }
+      .bottom { margin-top : 50px; }
       h4 { font-family : serif; }
+      nav { background-color: #008B8B; }
+      a { color: white; }
     </style>
   </head>
   <body>
@@ -37,20 +26,14 @@
         <a class="navbar-brand" href="<?php echo site_url('pjmController'); ?>">
             <img src="<?php echo base_url(); ?>src/logo.png" style="width: 40px">
         </a>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('pjmController/listBuku') ?>">Daftar Buku</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('pjmController/pageEdit'); ?>">Profil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('pjmController/logout'); ?>">Keluar</a>
-            </li>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="<?php echo site_url('pjmController/listBuku') ?>">Daftar Buku</a></li>
+          <li class="active"><a href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a></li>
+          <li class="active"><a href="<?php echo site_url('pjmController/pageEdit'); ?>">Profil</a></li>
+          <li class="active"><a href="<?php echo site_url('pjmController/logout'); ?>">Keluar</a></li>
         </ul>
+    </nav>
    <div class="atas">
     <center> <b> PROFIL </b> </center>
    </div>
@@ -75,6 +58,9 @@
           </div>
         </form>
       </div>
+      <div class="col-sm-10">
+      </div>
+      <button type="button" class="btn btn-info btn-lg" action=" " style="font-size:12px; padding-left:9px;">Ubah Profil</button>
     </div>
     <div class="bottom">
       <h4>Buku yang dipinjam :</h4>
@@ -83,7 +69,7 @@
           <div class="card-body">
             <h4 class="card-title">Judul Buku<?php echo ?></h4>
             <img class="card-img-bottom" src="" alt="Card image" style="width:100%">
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Kembalikan</button>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size:12px; padding-left:9px;">Kembalikan</button>
             <div class="modal fade" id="myModal" role="dialog">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -106,7 +92,7 @@
           <div class="card-body">
             <h4 class="card-title">Judul Buku<?php echo ?></h4>
             <img class="card-img-bottom" src="" alt="Card image" style="width:100%">
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Kembalikan</button>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size:12px; padding-left:9px;">Kembalikan</button>
             <div class="modal fade" id="myModal" role="dialog">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -129,7 +115,7 @@
           <div class="card-body">
             <h4 class="card-title">Judul Buku<?php echo ?></h4>
             <img class="card-img-bottom" src="" alt="Card image" style="width:100%">
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Kembalikan</button>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size:12px; padding-left:9px;">Kembalikan</button>
             <div class="modal fade" id="myModal" role="dialog">
               <div class="modal-dialog">
                 <div class="modal-content">
