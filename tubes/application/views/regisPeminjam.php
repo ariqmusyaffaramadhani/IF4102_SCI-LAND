@@ -8,7 +8,11 @@
 </head>
 <body>
     <div class="form">
+<<<<<<< HEAD
         <form action="<?php echo site_url('pjmController/regisPeminjam'); ?>" method="POST">
+=======
+        <form action="<?php echo site_url('pjmController/regisPeminjam') ?>" method="POST">
+>>>>>>> 58ce9b95feb21ce6b4c13f1588d2c7d596dce606
             <div class="form-group">
                 <label for="nama">Nama:</label>
                 <input type="text" name="namaPjm">
@@ -28,6 +32,6 @@
             <button type="submit">Submit</button>
         </form>
     </div>
-    
+
 </body>
 </html>
