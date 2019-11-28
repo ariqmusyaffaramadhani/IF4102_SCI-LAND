@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2019 at 06:49 PM
+-- Generation Time: Nov 28, 2019 at 07:18 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -41,7 +41,8 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`namaAdm`, `emailAdm`, `alamatAdm`, `passAdm`) VALUES
 ('Farah', 'fakhranakurnia@gmail.com', 'Jl.umayah', 'farah'),
-('Jojo', 'jojojovita@gmail.com', 'Jl.Umayah', 'jojo');
+('Jojo', 'jojojovita@gmail.com', 'Jl.Umayah', 'jojo'),
+('ariq', 'ariqmr123@gmail.com', 'surga', '123456');
 
 -- --------------------------------------------------------
 
@@ -59,6 +60,14 @@ CREATE TABLE `buku` (
   `sinopsis` varchar(255) NOT NULL,
   `imgpath` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `buku`
+--
+
+INSERT INTO `buku` (`id_buku`, `judul`, `penulis`, `penerbit`, `jhal`, `stock`, `sinopsis`, `imgpath`) VALUES
+('1', 'Hydro coco', 'AWDLAJWDAWH', 'qwuho', 123, 123, '', 'default.jpeg'),
+('1001', 'laskar LGBT', 'Mamat', 'Erlanggoy', 123123, 123, '', '1001.png');
 
 -- --------------------------------------------------------
 

@@ -64,12 +64,14 @@
             $fname = $this->upload->data('file_name');
           }
           else {
-            $fname = "default.jpeg";
             echo $this->upload->display_errors();
           }
 
         }
 
+        if(!$fname){
+          $fname = "default.jpeg";
+        }
         
         $data = [
           "id_buku" => $this->input->post('vidbook',true),
