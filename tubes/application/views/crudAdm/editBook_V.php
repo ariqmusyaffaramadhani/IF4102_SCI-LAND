@@ -2,53 +2,42 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+<?php 
+    $dat = "3.jpg";
+?>
+    <div class="container-fluid">
+        <?= $this->session->flashdata('message');?>
 
-    <div class="container">
-        
-        <div style="background-color: #cce6ff; width: 50%; margin-left: 25%;">
-            <!-- form here -->
-            <?= $this->session->flashdata('message');?>
+        <div class="row" style="margin-bottom: 4%;">
+            <div class="col-md-12" >
+                <center>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                            <input type="text" class="form-control" id="vpenerbit" name="vpenerbit" placeholder="Penerbit" style="margin-left: 10%; width: 81%;">
+                            </div>
+                            <div class="col-md-2">btn</div>
+                        </div>
 
-            <form method="POST" action="<?= site_url('crud_book_C/addBook'); ?>" accept-charset="UTF-8">
-                <div class="form-group" style="padding-top: 8%;">
-                    <input type="text" class="form-control" id="vidbook" name="vidbook" placeholder="ID" style="margin-left: 10%; width: 81%;">
-                </div>
-                
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="text" class="form-control" id="vjudul" name="vjudul" placeholder="Judul" style="margin-left: 10%; width: 81%;">
-                </div>
-                
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="text" class="form-control" id="vpenulis" name="vpenulis" placeholder="Penulis" style="margin-left: 10%; width: 81%;">
-                </div>
+                    </div>
+                </center>
+            </div>
+        </div>
 
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="text" class="form-control" id="vpenerbit" name="vpenerbit" placeholder="Penerbit" style="margin-left: 10%; width: 81%;">
-                </div>
-                
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="number" class="form-control" id="vjhal" name="vjhal" placeholder="Jumlah Halaman" style="margin-left: 10%; width: 81%;">
-                </div>
-
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="number" class="form-control" id="vstock" name="vstock" placeholder="Jumlah Ketersediaan" style="margin-left: 10%; width: 81%;">
-                </div>
-
-                
-                <div class="form-group" style="padding-top: 2%;">
-                    <label for="exampleFormControlFile1" style="margin-left: 10%;"s>Sinopsis</label>
-                    <textarea class="form-control" id="vsinopsis" name="vsinopsis" rows="7" style="margin-left: 10%; width: 80%;"></textarea>
+        <div class="row">
+            <div class="col-md-2" style="margin-left: 5%;">
+                <img width="100%" height="100%" src="<?= base_url('images/').$dat ?>" style="object-fit: contain;">
+            </div>
+            <div class="col-md-8">
+                <div class="container-fluid">
+                    <div class="row" style="background-color: #cce6ff; border-radius: 5px;">
+                        <div class="col-md-6"> ini </div>
+                        <div class="col-md-6"> wadidaw </div>
+                    </div>
                 </div>
 
-                <div class="form-group" style="padding-top: 2%;">
-                        <label for="exampleFormControlFile1" style="margin-left: 10%;"s>Cover Buku</label>
-                        <input type="file" class="form-control-file" id="vcover" name="vcover" style="margin-left: 10%;">
-                </div>
-                <div style="padding-bottom: 2%;">
-                    <button type="reset" class="btn btn-secondary" style="width: 15%; height: 8%; margin-left: 10%;">Reset</button>
-                    <button type="submit" class="btn btn-primary" style="width: 15%; height: 8%; margin-left: 4%;">Submit</button>
-                </div>
-            </form>
+            </div>
+            
         </div>
 
     </div>

@@ -105,6 +105,17 @@
       $this->load->view('crudAdm/viewBook_V',$bdata);
     }
 
+    public function editbookV(){
+      $data['title'] = "Ubah Data Buku";
+      $this->load->view('crudAdm/header', $data);  
+      $this->load->view('crudAdm/editBook_V');
+    }
+
+
+
+    public function searchID(){
+
+    }
 
     public function search(){
       // $keyword = $this->input->post('keyword');

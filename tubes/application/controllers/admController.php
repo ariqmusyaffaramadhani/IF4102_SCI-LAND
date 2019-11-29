@@ -8,6 +8,7 @@ class admController extends CI_Controller {
     }
 
     public function index() {
+        $this->load->view('crudAdm/header');
         $this->load->view('homeAdmin');
     }
 

@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .profil {
         margin-top: 5%;
     }
-    button {
+    .adm_button {
         background-color: #00A8A8;
         color: white;
         border-radius: 5px;
@@ -90,11 +90,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="<?= site_url('admController'); ?>">
             <img src="<?php echo base_url();?>src/logo.png" style="width: 40px">
         </a>
         <ul class="navbar-nav ml-auto">
