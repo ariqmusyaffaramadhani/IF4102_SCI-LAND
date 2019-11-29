@@ -106,16 +106,68 @@
     }
 
     public function editbookV(){
-      $data['title'] = "Ubah Data Buku";
-      $this->load->view('crudAdm/header', $data);  
-      $this->load->view('crudAdm/editBook_V');
+
+        $id = $this->input->post('eid',true);
+        $result['book'] = $this->M_Buku->get_buku($id);
+        if($result){
+          $dataaa = [
+            "id" => $id
+          ];
+          $this->session->set_userdata($dataaa);
+          $data['title'] = "Ubah Data Buku";
+          $this->load->view('crudAdm/header', $data);  
+          $this->load->view('crudAdm/editBook_V',$result);      
+      }
     }
 
 
+    public function editbook(){
+      $this->form_validation->set_rules('ejudul','judul','required', [
+        'required' => 'judul harus diisi!'
+      ]);
+      $this->form_validation->set_rules('epenulis','penulis','required', [
+        'required' => 'penulis harus diisi!'
+      ]);
+      $this->form_validation->set_rules('epenerbit','penerbit','required', [
+        'required' => 'penerbit harus diisi!'
+      ]);
+      $this->form_validation->set_rules('ejhal','jhal','required', [
+        'required' => 'jumlah halaman harus diisi!'
+      ]);
+      $this->form_validation->set_rules('estock','stock','required', [
+        'required' => 'jumlah stock harus diisi harus diisi!'
+      ]);
 
-    public function searchID(){
+      if ($this->form_validation->run() == false){
+        $id = $this->session->userdata('id');
+        $result['book'] = $this->M_Buku->get_buku($id);
+          if($result){
+            $data['title'] = "Ubah Data Buku";
+            $this->load->view('crudAdm/header', $data);  
+            $this->load->view('crudAdm/editBook_V',$result);
+          }
 
-    }
+      }
+      else{
+        $id = $this->session->userdata('id');
+        $data = [
+          "judul" => $this->input->post('ejudul',true),
+          "penulis" => $this->input->post('epenulis',true),
+          "penerbit" => $this->input->post('epenerbit',true),
+          "jhal" => $this->input->post('ejhal',true),
+          "stock" => $this->input->post('estock',true),
+          "sinopsis" => $this->input->post('esinopsis',true)
+        ];
+  
+        $this->M_Buku->updateBuku($id,$data);
+        $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
+        <b>Ubah data buku sukses!</b>
+        </div>');
+        $this->editbookV();
+
+
+      }
+  }
 
     public function search(){
       // $keyword = $this->input->post('keyword');

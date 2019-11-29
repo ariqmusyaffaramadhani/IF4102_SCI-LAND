@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         margin-top: 5px;
     }
 
-    input[type=text] {
+    .adm_input[type=text] {
         margin-left: 30%;
         margin-right: 30%;
         margin-bottom: 5px;
@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         border-radius : 6px;
     }
 
-    input[type=text]:hover {
+    .adm_input[type=text]:hover {
         outline: none;
         border-bottom : 3px solid #13326D;
     }
