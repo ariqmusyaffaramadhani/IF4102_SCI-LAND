@@ -97,9 +97,15 @@
 
 
 
-    public function view(){
-      $this->load->view('halPencarian');
+    public function viewbookV(){
+      $bdata['books'] = $this->M_Buku->get_all();
+
+      $data['title'] = "List Data Buku";
+      $this->load->view('crudAdm/header', $data);  
+      $this->load->view('crudAdm/viewBook_V',$bdata);
     }
+
+
     public function search(){
       // $keyword = $this->input->post('keyword');
       $data=$this->M_Buku->get_buku_keyword();

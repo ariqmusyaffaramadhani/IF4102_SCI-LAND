@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <div class="container">
         
-        <div style="background-color: #cce6ff; width: 50%; margin-left: 25%;">
+        <div style="background-color: #cce6ff; width: 50%; margin-left: 25%; border-radius: 15px;">
             <!-- form here -->
             <?= $this->session->flashdata('message');?>
 
@@ -50,7 +50,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="form-group" style="padding-top: 2%;">
                         <label for="exampleFormControlFile1" style="margin-left: 10%;"s>Cover Buku</label>
                         <input type="file" class="form-control-file" id="vcover" name="vcover" style="margin-left: 10%;">
-                </div>
                 <div style="padding-bottom: 2%;">
                     <button type="reset" class="btn btn-secondary" style="width: 15%; height: 8%; margin-left: 10%;">Reset</button>
                     <button type="submit" class="btn btn-primary" style="width: 15%; height: 8%; margin-left: 4%;">Submit</button>
