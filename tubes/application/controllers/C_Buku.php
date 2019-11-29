@@ -7,18 +7,23 @@
     }
 
     public function index(){
-        $data['detail_buku']=$this->Buku_M->get_all();
-        $this->load->view('detail_buku',$data);
+        $data['list_buku']=$this->M_Buku->get_all();
+        $this->load->view('daftarBuku',$data);
     }
 
     public function view(){
       $this->load->view('halPencarian');
     }
+
     public function search(){
       // $keyword = $this->input->post('keyword');
-      $data=$this->M_Buku->get_buku_keyword();
-      $this->load->view('lapPencarian',$data);
+      $data['list_buku']=$this->M_Buku->get_buku_keyword();
+      $this->load->view('daftarBuku',$data);
+    }
 
+    public function detailBuku($id_buku){
+      $data['detail'] = $this->M_Buku->get_buku($id_buku);
+      $this->load->view('detailBuku',$data);
     }
 
   }

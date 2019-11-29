@@ -31,7 +31,7 @@
       </a>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li class="active"><a href="<?php echo site_url('pjmController/listBuku') ?>">Daftar Buku</a></li>
+        <li class="active"><a href="<?php echo site_url('C_Buku') ?>">Daftar Buku</a></li>
         <li class="active"><a href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a></li>
         <li class="active"><a href="<?php echo site_url('pjmController/pageEdit'); ?>">Profil</a></li>
         <li class="active"><a href="<?php echo site_url('pjmController/logout'); ?>">Keluar</a></li>
@@ -44,14 +44,16 @@
 
     </div>
     <table>
+      <?php foreach($list_buku as $buku): ?>
       <tr>
-        <!-- <td> <img id="pic" src="<?php echo base_url();?>src/nkcthi.jpg"></td>
-        <td style="font-size:16px;"> <?php echo $buku['judul']; ?> </td>
-        <td> <button type="button">Lihat Detail</button> </td> -->
+        <td> <img id="pic" src="<?= base_url('images/').$buku['imgpath'];?>"></td>
+        <td style="font-size:16px;"> <?= $buku['judul']; ?> </td>
+        <td><a href="<?php echo site_url(); ?>/C_Buku/detailBuku/<?= $buku['id_buku'] ?>"> <button type="button">Lihat Detail</button> </a></td>
       </tr>
-      <center>
+      <?php endforeach ?>
+    </table>
+    <center>
     <button type="button" href="<?php echo site_url('pjmController'); ?>">Kembali</button>
     </center>
-    </table>
   </body>
 </html>

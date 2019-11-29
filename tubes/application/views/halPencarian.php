@@ -29,14 +29,16 @@
          </a>
          <ul class="nav navbar-nav">
            <li class="active"><a href="#">Home</a></li>
-           <li class="active"><a href="<?php echo site_url('pjmController/listBuku') ?>">Daftar Buku</a></li>
+           <li class="active"><a href="<?php echo site_url('C_Buku') ?>">Daftar Buku</a></li>
            <li class="active"><a href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a></li>
            <li class="active"><a href="<?php echo site_url('pjmController/pageEdit'); ?>">Profil</a></li>
            <li class="active"><a href="<?php echo site_url('pjmController/logout'); ?>">Keluar</a></li>
          </ul>
      </nav>
-      <h1><center>Pencarian</center></h1>
-      <input type="text" placeholder="Judul Buku"> <br> <br>
-      <button href="<?php echo site_url('C_buku/search') ?>" type="submit">Cari</button>
+      <form action="<?php echo site_url('C_buku/search'); ?>" method="post">
+        <h1><center>Pencarian</center></h1>
+        <input type="text" name="keyword" placeholder="Judul Buku"> <br> <br>
+        <button type="submit">Cari</button>
+      </form>
   </body>
 </html>

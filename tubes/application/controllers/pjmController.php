@@ -28,7 +28,7 @@ class pjmController extends CI_Controller {
     }
 
     public function pageEdit() {
-        $this->load->view('akunPeminjam');
+        $this->load->view('ubahProfilPjm');
     }
 
     public function logout() {

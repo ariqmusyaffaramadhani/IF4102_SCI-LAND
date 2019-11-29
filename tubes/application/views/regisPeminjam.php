@@ -28,7 +28,7 @@
     <h1><center><b>REGISTRASI PEMINJAM</b></center</h1>
   </div>
   <div class="middle">
-    <form class="form-horizontal" action="<?php echo site_url('admController/regisPeminjam'); ?>" method="post" class="regis">
+    <form class="form-horizontal" action="<?php echo site_url('pjmController/regisPeminjam'); ?>" method="post" class="regis">
       <div class="form-group">
         <label class="control-label col-sm-3" for="nama">Nama Lengkap :</label>
         <div class="col-sm-6">
@@ -55,7 +55,7 @@
       </div>
       <div class="form-group">
         <div class="col-sm-offset-3 col-sm-9">
-          <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size:12px; padding:3px;">Daftar</button>
+          <button type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size:12px; padding:3px;">Daftar</button>
           <div class="modal fade" id="myModal" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">

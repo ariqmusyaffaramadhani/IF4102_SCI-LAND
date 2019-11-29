@@ -18,6 +18,7 @@
         margin-left: 20%; width: 60%; height: 300px; background-color: white; }
      button { background-color: #00A8A8; color: white; border-radius: 3px; padding: 5px; width: 70px; height: 45px; font-size: 12px; }
      button:hover { cursor: pointer; background-color: #13326D; }
+     #pic { width: 100%; }
     </style>
   </head>
   <body>
@@ -27,28 +28,27 @@
         </a>
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li class="active"><a href="<?php echo site_url('pjmController/listBuku') ?>">Daftar Buku</a></li>
+          <li class="active"><a href="<?php echo site_url('C_Buku') ?>">Daftar Buku</a></li>
           <li class="active"><a href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a></li>
           <li class="active"><a href="<?php echo site_url('pjmController/pageEdit'); ?>">Profil</a></li>
           <li class="active"><a href="<?php echo site_url('pjmController/logout'); ?>">Keluar</a></li>
         </ul>
     </nav>
     <div class="atas">
-      <h1><center><?php?></center></h1>
+      <h1 style="color:white;"><center><?= $detail['judul']; ?></center></h1>
     </div>
     <div class="middle">
       <div class="top">
         <div class="col-sm-4">
-          Ini gambar buku
-          <img src="src/nkcthi.jpg" alt="">
+          <img id="pic" src="<?= base_url('images/').$detail['imgpath'];?>" alt="">
         </div>
         <div class="col-sm-8">
-          <p> ini sinopsis <?php?></p>
+          <p> <?= $detail['sinopsis']; ?><?php?></p>
         </div>
       </div>
       <div class="bottom">
         <div class="col-sm-6">
-          <h5>Ketersediaan : <?php?></h5>
+          <h5>Ketersediaan: <?= $detail['stock']; ?><?php?></h5>
         </div>
         <div class="col-6">
           <button type="button" name="button">Pinjam</button>
