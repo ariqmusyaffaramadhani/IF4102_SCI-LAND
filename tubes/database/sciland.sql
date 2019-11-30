@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2019 at 07:18 PM
+-- Generation Time: Nov 30, 2019 at 05:12 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -66,8 +66,9 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id_buku`, `judul`, `penulis`, `penerbit`, `jhal`, `stock`, `sinopsis`, `imgpath`) VALUES
-('1', 'Hydro coco', 'AWDLAJWDAWH', 'qwuho', 123, 123, '', 'default.jpeg'),
-('1001', 'laskar LGBT', 'Mamat', 'Erlanggoy', 123123, 123, '', '1001.png');
+('1', 'Kungfu Boy', 'Takeshi Maekawa', 'Wibuu', 60, 100, 'ini buku wibu', '1.jpg'),
+('2', 'The Book of Almost', 'Brian Khrisna', 'Kompas media', 50, 50, '                                                                                                                        samlekom geys                                                                                                                        ', '2.jpg'),
+('3', 'Harry Potter and The Goblet Of Fire', 'J.K Rowling', 'Bloomsbury', 150, 20, '                        Harry, Ron dan Hermione memasuki tahun keempat mereka di Hogwarts. Setelah mengalami mimpi aneh dari Pangeran Kegelapan dan nya Pelahap Maut, Harry Potter terbangun di rumah keluarga Weasley di mana mereka segera berangkat ke Piala', '3.jpg');
 
 -- --------------------------------------------------------
 
