@@ -10,31 +10,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>src/js/bootstrap.js"></script>
     <style>
-        input {
-            margin-left: 30%;
-            margin-right: 30%;
-            margin-bottom: 5px;
-            width: 40%;
-            border: none;
-            line-height: 50px;
-            border-bottom: 3px solid #DDD;
-            padding: 10px;
-            border-radius : 6px;
-        }
-
-        input:hover {
-            outline: none;
-            border-bottom : 3px solid #13326D;
-        }
+        input { margin-left: 30%; margin-right: 30%; margin-bottom: 5px; width: 40%; border: none; line-height: 50px;
+                border-bottom: 3px solid #DDD; padding: 10px; border-radius : 6px; }
+        input:hover { outline: none; border-bottom : 3px solid #13326D; }
         nav { background-color: #008B8B; }
         a { color: white;}
-        button { background-color: #00A8A8;
-                color: white;
-                border-radius: 3px;
-                padding: 5px;
-                width: 70px;
-                height: 45px;
-                font-size: 15px; }
+        button { background-color: #00A8A8; color: white; border-radius: 10px; padding: 5px; width: 70px;
+                 height: 45px; font-size: 15px; }
         button:hover { cursor: pointer;
                background-color: #13326D; }
     </style>

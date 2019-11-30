@@ -3,12 +3,12 @@ defined('BASEPATH') OR exit('No direct script allowed');
 
 class pjmModel extends CI_Model {
     public function addPeminjam() {
-        $data = [
+        $data = array(
             "namaPjm" => $this->input->post('namaPjm',true),
             "emailPjm" => $this->input->post('emailPjm',true),
             "alamatPjm" => $this->input->post('alamatPjm',true),
             "passPjm" => $this->input->post('passPjm',true)
-        ];
+        );
 
         $this->db->insert('peminjam',$data);
     }

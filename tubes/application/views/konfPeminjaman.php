@@ -15,7 +15,7 @@
       h1 { color: white; font-family: serif; }
       td { color: #13326D;}
       img { padding-left: 100px;}
-      button { background-color: #00A8A8; color: white; border-radius: 3px; padding: 5px; width: 70px;
+      button { background-color: #00A8A8; color: white; border-radius: 10px; padding: 5px; width: 70px;
               height: 45px; font-size: 10px; }
       button:hover { cursor: pointer; background-color: #13326D; }
       nav { background-color: #008B8B; }
