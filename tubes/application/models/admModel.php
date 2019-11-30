@@ -3,12 +3,12 @@ defined('BASEPATH') OR exit('No direct script allowed');
 
 class admModel extends CI_Model {
     public function addAdmin() {
-        $data = [
+        $data = array (
             "namaAdm" => $this->input->post('namaAdm',true),
             "emailAdm" => $this->input->post('emailAdm',true),
             "alamatAdm" => $this->input->post('alamatAdm',true),
             "passAdm" => $this->input->post('passAdm',true)
-        ];
+        );
 
         $this->db->insert('admin',$data);
     }

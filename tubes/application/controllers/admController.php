@@ -43,7 +43,7 @@ class admController extends CI_Controller {
             $this->load->view('regisAdmin');
         } else {
             $this->admModel->addAdmin();
-            redirect('admController');
+            redirect('pjmController/login');
         }
     }
 
@@ -100,7 +100,7 @@ class admController extends CI_Controller {
             );
             $this->admModel->editAdmin($dataAkun['emailAdm'],$new);
             redirect('admController/home');
- 
+
         } else {
             redirect('admController/editAkun');
         }
