@@ -64,7 +64,7 @@
                   <h4 class="modal-title">Pendaftaran sebagai peminjam berhasil!</h4>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal"><a href="#" style="color:black;">Login</a></button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal"><a href="<?php echo site_url('pjmController/login'); ?>" style="color:black;">Login</a></button>
                 </div>
               </div>
             </div>

@@ -43,7 +43,7 @@ class admController extends CI_Controller {
             $this->load->view('regisAdmin');
         } else {
             $this->admModel->addAdmin();
-            redirect('admController/home');
+            redirect('admController');
         }
     }
 

@@ -27,10 +27,10 @@
 <body>
   <nav class="navbar navbar-expand-sm">
       <a class="navbar-brand" href="<?php echo site_url('pjmController'); ?>">
-          <img src="<?php echo base_url(); ?>src/logo.png" style="width: 40px">
+          <img src="<?php echo base_url(); ?>src/logo.png" style="width: 40px; margin-top: -14px;">
       </a>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="<?php echo site_url('pjmController'); ?>">Home</a></li>
         <li class="active"><a href="<?php echo site_url('C_Buku') ?>">Daftar Buku</a></li>
         <li class="active"><a href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a></li>
         <li class="active"><a href="<?php echo site_url('pjmController/pageEdit'); ?>">Profil</a></li>
