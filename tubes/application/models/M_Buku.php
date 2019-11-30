@@ -20,6 +20,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     }
 
+    public function deleteBuku($id){
+      $this->db->where('id_buku',$id);
+      $this->db->delete('buku');
+    }
+
 
     public function get_all(){
       $this->db->select('*');

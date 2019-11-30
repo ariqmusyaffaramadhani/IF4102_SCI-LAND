@@ -8,6 +8,8 @@ class pjmController extends CI_Controller {
     }
 
     public function index() {
+        // $data['judul'] = 'Beranda';
+        // $this->load->view('headerPjm',$data);
         $this->load->view('homePeminjam');
     }
 
@@ -20,11 +22,22 @@ class pjmController extends CI_Controller {
     }
 
     public function listBuku() {
+        // $data['judul'] = 'Daftar Buku Tersedia';
+        // $this->load->view('headerPjm',$data);
         $this->load->view('daftarBuku');
     }
 
     public function cariBuku() {
+        // $data['judul'] = 'Pencarian';
+        // $this->load->view('headerPjm',$data);
         $this->load->view('halPencarian');
+    }
+
+    public function pageProfil() {
+        $data['judul'] = 'Profil';
+        $data['dataAkun'] = $this->session->userdata('sessPjm');
+        // $this->load->view('headerPjm',$data);
+        $this->load->view('profile',$data);
     }
 
     public function pageEdit() {

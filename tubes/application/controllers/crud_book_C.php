@@ -169,6 +169,32 @@
       }
   }
 
+
+  public function delbookV(){
+
+    $id = $this->input->post('did',true);
+    $result['book'] = $this->M_Buku->get_buku($id);
+    if($result){
+      $ddata = [
+        "id" => $id
+      ];
+      $this->session->set_userdata($ddata);
+      $data['title'] = "Hapus Data Buku";
+      $this->load->view('crudAdm/header', $data);  
+      $this->load->view('crudAdm/delBook_V',$result);   
+    }   
+  
+}
+
+public function delbook(){
+  $id = $this->session->userdata('id');
+  $this->M_Buku->deleteBuku($id);
+  $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
+  <b>Hapus data buku berhasil!</b>
+  </div>');
+  $this->delbookV();
+}
+
     public function search(){
       // $keyword = $this->input->post('keyword');
       $data=$this->M_Buku->get_buku_keyword();
