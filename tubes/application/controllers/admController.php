@@ -21,7 +21,7 @@ class admController extends CI_Controller {
     }
 
     public function editAkun() {
-        $this->load->view('ekunAdmin');
+        $this->load->view('akunAdmin');
     }
 
     public function pageEdit() {
