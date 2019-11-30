@@ -4,6 +4,7 @@
     public function __construct() {
       parent::__construct();
       $this->load->model('M_Buku');
+      $this->load->model('M_Pinjam');
     }
 
     public function index(){
@@ -31,6 +32,17 @@
     public function konfPinjam($id_buku) {
       $data['buku'] = $this->M_Buku->get_buku($id_buku);
       $this->load->view('konfPeminjaman',$data);
+    }
+
+    public function pinjam($data){
+      // $data = array(
+      //   "emailPjm" => $this->input->post('emailPjm',true),
+      //   "id_buku" => $this->input->post('id_buku',true),
+      //   "tgl_pinjam" => $this->input->post('tgl_pinjam',true),
+      //   "tgl_kembali" => $this->input->post('tgl_kembali',true),
+      //   "status" => "1"
+      // );
+      $this->M_Pinjam->addPinjam($data);
     }
 
   }

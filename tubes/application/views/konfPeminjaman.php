@@ -43,7 +43,7 @@
     <?php $dataAkun = $this->session->userdata('sessPjm'); ?>
       <div class="middle">
         <div>
-          <form class="form-horizontal" action="" method="post">
+          <form class="form-horizontal" action="<?php echo site_url('C_Buku/pinjam'); ?>" method="post">
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">Nama : </label>
               <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="namaPjm" value="<?php echo $dataAkun['namaPjm']; ?>"></input>
@@ -51,7 +51,7 @@
             </div>
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">E-mail : </label>
-              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="emailPjm" value="<?php echo $dataAkun['emailPjm']; ?>">
+              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="emailPjm" value="<?= $dataAkun['emailPjm']; ?>"></input>
                 </label>
             </div>
             <div class="form-group">
@@ -69,22 +69,33 @@
               <label class="control-label col-sm-4" for="nama">Tanggal dikembalikan : </label>
               <label class="col-sm-5"> 
               <input type="text" style="display:hidden; border:0px;" name="tgl_kembali" value="<?php $back=strtotime("+7 days",strtotime($today)); 
-              echo $last=date("l".", "."d-m-Y",$back); ?>">
-              </input> </label>
+              echo $last=date("l".", "."d-m-Y",$back); ?>"></input>
+              </label>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label class="control-label col-sm-4" for="nama">Kode Peminjaman : </label>
-              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="id_pinjam" value="<?php echo $idPinjam=rand(1,100); ?>"> 
-              </input> </label>
+              <label class="col-sm-5">
+              <input type="text" style="display:hidden; border:0px;" name="id_pinjam" value="<?php ?>"> 
+              </input> </label> -->
             </div>
+            <?php
+            $data = [
+              "emailPjm" => $dataAkun['emailPjm'],
+              "id_buku" => $buku['id_buku'],
+              "tgl_pinjam" => $today,
+              "tgl_kembali" => $back,
+              "status" => '1'
+            ];
+          ?>
             <div class="form-group">
               <div class="col-sm-7">
-
+              <input type="text" style="display:hidden; border:0px;" name="id_buku" value="<?php $buku['id_buku']; ?>"></input>
               </div>
-              <button class="col-sm-2" type="submit" name="button">Halaman <br> Awal</button>
+              <a href="<?php echo site_url(); ?>/C_Buku/pinjam/<?= $data ?>"><button class="col-sm-2" type="submit" name="button">Konfirmasi</button></a>
               
           </div>
           </form>
+          
       </div>
 
   </body>
