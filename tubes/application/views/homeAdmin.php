@@ -1,7 +1,9 @@
 
 <div>
-
-
+<?php $dataa = $this->session->userdata('sessAdm'); ?>
+    <div style="margin-left: 5%;">
+            halo admin  <?= $dataa['namaAdm']; ?>
+        </div>
 <div>
     <center>
         <a href="<?php echo site_url('crud_book_C/addBookV'); ?>" style="color: white;"><button class="adm_button">Tambah</button></a> <br>

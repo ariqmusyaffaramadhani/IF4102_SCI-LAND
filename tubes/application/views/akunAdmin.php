@@ -13,25 +13,22 @@
         </a>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="">1</a>
+                <a class="nav-link" href="<?php echo site_url('admController'); ?>">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">2</a>
+                <a class="nav-link" href="<?php echo site_url('admController/editAdmin'); ?>">Edit Profil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('admControllwe/editAdmin'); ?>">Edit Profil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('admControllwe/logout'); ?>">Log Out</a>
+                <a class="nav-link" href="<?php echo site_url('admController/logout'); ?>">Log Out</a>
             </li>
         </ul>
     </nav>
     <div class="profil">
         <h1><center>Edit Profil</center></h1>
-        <form method="post" action="">
-            <input id="namaAdm" type="text" name="nama" placeholder="Nama"><br>
-            <input id="emailAdm" type="text" name="email" placeholder="Email"><br>
-            <input id="almtAdm" type="text" name="alamat" placeholder="Alamat"><br>
+        <form method="post" action="<?= base_url('admController/editAdmin')?>">
+            <input id="namaAdm" type="text" name="namaAdm" placeholder="Nama"><br>
+            <input id="emailAdm" type="text" name="emailAdm" placeholder="Email"><br>
+            <input id="almtAdm" type="text" name="alamatAdm" placeholder="Alamat"><br>
         </form>
         <center>
             <button style="margin-right: 40px;">Batal</button>

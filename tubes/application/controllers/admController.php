@@ -24,9 +24,9 @@ class admController extends CI_Controller {
         $this->load->view('akunAdmin');
     }
 
-    public function pageEdit() {
-        $this->load->view('akunAdmin');
-    }
+    // public function pageEdit() {
+    //     $this->load->view('akunAdmin');
+    // }
 
     public function logout() {
         $this->session->sess_destroy();
@@ -60,10 +60,10 @@ class admController extends CI_Controller {
                 // pass benar
                 if ($dataAdm['passAdm'] == $passAdm) {
                     $sess_data = array(
-                        'namaAdm' => $data['namaAdm'],
-                        'emailAdm' => $data['emailAdm'],
-                        'alamatAdm' => $data['alamatAdm'],
-                        'passAdm' => $data['passAdm']
+                        'namaAdm' => $dataAdm['namaAdm'],
+                        'emailAdm' => $dataAdm['emailAdm'],
+                        'alamatAdm' => $dataAdm['alamatAdm'],
+                        'passAdm' => $dataAdm['passAdm']
                     );
                     $this->session->set_userdata('sessAdm',$sess_data);
                     redirect('admController');
@@ -102,7 +102,7 @@ class admController extends CI_Controller {
             redirect('admController/home');
  
         } else {
-            redirect('admController/pageEdit');
+            redirect('admController/editAkun');
         }
     }
 }

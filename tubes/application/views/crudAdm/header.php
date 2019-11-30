@@ -106,5 +106,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <li class="nav-item">
                     <a class="nav-link" href="<?php echo site_url('admController/editAkun'); ?>">Edit Profil</a>
             </li>
+
+            <li class="nav-item">
+                    <a class="nav-link" href="<?php echo site_url('admController/logout'); ?>">
+                    Log Out
+                </a>
+            </li>
         </ul>
     </nav>
