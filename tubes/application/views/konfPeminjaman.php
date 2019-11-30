@@ -46,39 +46,45 @@
           <form class="form-horizontal" action="" method="post">
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">Nama : </label>
-              <label class="col-sm-5"> <?php echo $dataAkun['namaPjm']; ?> </label>
+              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="namaPjm" value="<?php echo $dataAkun['namaPjm']; ?>"></input>
+                </label>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">E-mail : </label>
-              <label class="col-sm-5"> <?php echo $dataAkun['emailPjm']; ?> </label>
+              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="emailPjm" value="<?php echo $dataAkun['emailPjm']; ?>">
+                </label>
             </div>
-           <div class="form-group">
-             <label class="control-label col-sm-4" for="nama">Buku yang dipinjam : </label>
-             <label class="col-sm-5"> <?php echo $buku['judul'] ?> </label>
-           </div>
-           <div class="form-group">
-             <label class="control-label col-sm-4" for="nama">Tanggal dipinjam : </label>
-             <label class="col-sm-5"> <?php echo $today=date("l".", "."d-m-Y"); ?> </label>
-           </div>
-           <div class="form-group">
-             <label class="control-label col-sm-4" for="nama">Tanggal dikembalikan : </label>
-             <label class="col-sm-5"> 
-             <input type="text">
-             <?php $back=strtotime("+7 days",strtotime($today)); 
-             echo $last=date("l".", "."d-m-Y",$back); ?> </input> </label>
-           </div>
-           <div class="form-group">
-             <label class="control-label col-sm-4" for="nama">Kode Peminjaman : </label>
-             <label class="col-sm-5"> <?php echo $idPinjam=rand(1,100);  ?> </label>
-           </div>
-           <div class="form-group">
-             <div class="col-sm-7">
+            <div class="form-group">
+              <label class="control-label col-sm-4" for="nama">Buku yang dipinjam : </label>
+              <label class="col-sm-5"> 
+              <input type="text" style="display:hidden; border:0px;" name="judul" value="<?php echo $buku['judul'] ?>">
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4" for="nama">Tanggal dipinjam : </label>
+              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="tgl_pinjam" value="<?php echo $today=date("l".", "."d-m-Y"); ?>"> 
+              </input> </label>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4" for="nama">Tanggal dikembalikan : </label>
+              <label class="col-sm-5"> 
+              <input type="text" style="display:hidden; border:0px;" name="tgl_kembali" value="<?php $back=strtotime("+7 days",strtotime($today)); 
+              echo $last=date("l".", "."d-m-Y",$back); ?>">
+              </input> </label>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4" for="nama">Kode Peminjaman : </label>
+              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="id_pinjam" value="<?php echo $idPinjam=rand(1,100); ?>"> 
+              </input> </label>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-7">
 
-             </div>
-             <button class="col-sm-2" type="button" name="button">Halaman <br> Awal</button>
-             
-         </div>
-         </form>
+              </div>
+              <button class="col-sm-2" type="submit" name="button">Halaman <br> Awal</button>
+              
+          </div>
+          </form>
       </div>
 
   </body>
