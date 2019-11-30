@@ -11,7 +11,6 @@ class pjmModel extends CI_Model {
         );
 
         $this->db->insert('peminjam',$data);
-        $this->load->view('konfPeminjaman',$data);
     }
 
     public function getPeminjamByEmail($emailPjm) {

@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         margin-top: 5px;
     }
 
-    input[type=text] {
+    .adm_input[type=text] {
         margin-left: 30%;
         margin-right: 30%;
         margin-bottom: 5px;
@@ -53,7 +53,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         border-radius : 6px;
     }
 
-    input[type=text]:hover {
+    .adm_input[type=text]:hover {
         outline: none;
         border-bottom : 3px solid #13326D;
     }
@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     .profil {
         margin-top: 5%;
     }
-    button {
+    .adm_button {
         background-color: #00A8A8;
         color: white;
         border-radius: 5px;
@@ -90,11 +90,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
+
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm">
-        <a class="navbar-brand" href="">
+        <a class="navbar-brand" href="<?= site_url('admController'); ?>">
             <img src="<?php echo base_url();?>src/logo.png" style="width: 40px">
         </a>
         <ul class="navbar-nav ml-auto">

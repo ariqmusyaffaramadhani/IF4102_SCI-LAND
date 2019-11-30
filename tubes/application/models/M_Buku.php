@@ -8,6 +8,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       $this->db->insert('buku',$data);
     }
 
+    public function updateBuku($id,$data){
+      $this->db->where('id_buku',$id);
+      $this->db->set('judul',$data['judul']);
+      $this->db->set('penulis',$data['penulis']);
+      $this->db->set('penerbit',$data['penerbit']);
+      $this->db->set('jhal',$data['jhal']);
+      $this->db->set('stock',$data['stock']);
+      $this->db->set('sinopsis',$data['sinopsis']);
+      $this->db->update('buku');
+
+    }
+
 
     public function get_all(){
       $this->db->select('*');

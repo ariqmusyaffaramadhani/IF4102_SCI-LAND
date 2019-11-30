@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,11 +27,15 @@
       </ul>
   </nav>
     <div>
+=======
+
+<div>
+>>>>>>> 8a0d01a9008a82c4170d656622f7e20977de2b6c
     <center>
-        <a href="<?php echo site_url('crud_book_C/addBookV'); ?>"><button>Tambah</button></a> <br>
-        <a href="<?php echo site_url('crud_book_C'); ?>"><button>Ubah</button></a> <br>
-        <a href="<?php echo site_url('crud_book_C'); ?>"><button>Hapus</button></a> <br>
-        <a href="<?php echo site_url('crud_book_C/viewbookV'); ?>"><button>Daftar Buku</button></a>
+        <a href="<?php echo site_url('crud_book_C/addBookV'); ?>" style="color: white;"><button class="adm_button">Tambah</button></a> <br>
+        <a href="<?php echo site_url('crud_book_C/editbookV'); ?>" style="color: white;"><button class="adm_button">Ubah</button></a> <br>
+        <a href="<?php echo site_url('crud_book_C'); ?>" style="color: white;"><button class="adm_button">Hapus</button></a> <br>
+        <a href="<?php echo site_url('crud_book_C/viewbookV'); ?>" style="color: white;"><button class="adm_button">Daftar Buku</button></a>
     </center>
     </div>
 </body>

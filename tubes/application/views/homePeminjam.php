@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Beranda</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>src/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>src/css/bootstrap.min.css"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -18,7 +18,7 @@
 <body>
   <nav class="navbar navbar-expand-sm">
       <a class="navbar-brand" href="<?php echo site_url('pjmController'); ?>">
-          <img src="<?php echo base_url(); ?>src/logo.png" style="width: 40px">
+          <img src="<?php echo base_url(); ?>src/logo.png" style="width: 40px; margin-top: -14px;">
       </a>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>

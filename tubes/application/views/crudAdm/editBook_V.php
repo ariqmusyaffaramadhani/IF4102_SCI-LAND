@@ -2,53 +2,75 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 
+<?php 
+    $dat = "3.jpg";
+?>
+    <div class="container-fluid">
 
-    <div class="container">
-        
-        <div style="background-color: #cce6ff; width: 50%; margin-left: 25%;">
-            <!-- form here -->
-            <?= $this->session->flashdata('message');?>
+        <!-- search bar -->
+        <div class="row" style="margin-bottom: 4%;">
+            <div class="col-md-9" style="padding-left: 25%;" >
+            <center>
+            <form method="POST" action="<?= base_url('crud_book_C/editbookV'); ?>" enctype="multipart/form-data" accept-charset="UTF-8">
+            
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="eid" name="eid" placeholder="Cari ID" aria-label="Cari ID" aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" id="search" name="search">Cari</button>
 
-            <form method="POST" action="<?= site_url('crud_book_C/addBook'); ?>" accept-charset="UTF-8">
-                <div class="form-group" style="padding-top: 8%;">
-                    <input type="text" class="form-control" id="vidbook" name="vidbook" placeholder="ID" style="margin-left: 10%; width: 81%;">
-                </div>
-                
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="text" class="form-control" id="vjudul" name="vjudul" placeholder="Judul" style="margin-left: 10%; width: 81%;">
-                </div>
-                
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="text" class="form-control" id="vpenulis" name="vpenulis" placeholder="Penulis" style="margin-left: 10%; width: 81%;">
+                    </div>
+            </div>
+
+            </form>  
+            <?= $this->session->flashdata('message');?>  
+            </center>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-2" style="margin-left: 5%;">
+                <img width="100%" height="100%" src="<?= base_url('images/').$book['imgpath'] ?>" style="object-fit: contain;">
+            </div>
+            <div class="col-md-8">
+                <div class="container-fluid">
+                    <div class="row" style="background-color: #cce6ff; border-radius: 5px;">
+                        <div class="col-md-6" style="padding-top: 2%; padding-bottom: 2%;">
+                        
+                        <form method="POST" action="<?= base_url('crud_book_C/editbook') ?>" enctype="multipart/form-data" accept-charset="UTF-8">
+                        <input type="text" class="form-control" id="ejudul" name="ejudul" placeholder="Judul" style="margin-left: 10%; width: 81%; margin-bottom: 3%;" value="<?= $book['judul'] ?>">
+                        <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('ejudul'); ?> </font></div>
+
+                        <input type="text" class="form-control" id="epenulis" name="epenulis" placeholder="Penulis" style="margin-left: 10%; width: 81%; margin-bottom: 3%;" value="<?= $book['penulis'] ?>">
+                        <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('epenulis'); ?> </font></div>
+                        
+                        <input type="text" class="form-control" id="epenerbit" name="epenerbit" placeholder="Penerbit" style="margin-left: 10%; width: 81%; margin-bottom: 3%;" value="<?= $book['penerbit'] ?>">
+                        <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('epenerbit'); ?> </font></div>
+
+                        <input type="number" class="form-control" id="ejhal" name="ejhal" placeholder="Jumlah Halaman" style="margin-left: 10%; width: 81%; margin-bottom: 3%;" value="<?= $book['jhal'] ?>">
+                        <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('ejhal'); ?> </font></div>
+                        
+                        <input type="number" class="form-control" id="estock" name="estock" placeholder="Jumlah Stock" style="margin-left: 10%; width: 81%; margin-bottom: 3%;" value="<?= $book['stock'] ?>">
+                        <div style="padding-left : 11%;"><font color="red" size="2px"> <?= form_error('estock'); ?> </font></div>    
+                    
+                    </div>
+
+
+                        <div class="col-md-6" style="padding-top: 2%; padding-bottom: 2%;">
+                        
+                        <label for="exampleFormControlFile1" style="margin-left: 5%;">Sinopsis</label>
+                        <textarea class="form-control" id="esinopsis" name="esinopsis" rows="6" style="margin-left: 4%; width: 80%;">
+                        <?= $book['sinopsis'] ?>
+                        </textarea>
+                        
+                        <button type="submit" class="btn btn-success" style="margin-top: 5%; margin-left: 4%;"> Simpan </button>
+                        </form>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="text" class="form-control" id="vpenerbit" name="vpenerbit" placeholder="Penerbit" style="margin-left: 10%; width: 81%;">
-                </div>
-                
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="number" class="form-control" id="vjhal" name="vjhal" placeholder="Jumlah Halaman" style="margin-left: 10%; width: 81%;">
-                </div>
-
-                <div class="form-group" style="padding-top: 2%;">
-                    <input type="number" class="form-control" id="vstock" name="vstock" placeholder="Jumlah Ketersediaan" style="margin-left: 10%; width: 81%;">
-                </div>
-
-                
-                <div class="form-group" style="padding-top: 2%;">
-                    <label for="exampleFormControlFile1" style="margin-left: 10%;"s>Sinopsis</label>
-                    <textarea class="form-control" id="vsinopsis" name="vsinopsis" rows="7" style="margin-left: 10%; width: 80%;"></textarea>
-                </div>
-
-                <div class="form-group" style="padding-top: 2%;">
-                        <label for="exampleFormControlFile1" style="margin-left: 10%;"s>Cover Buku</label>
-                        <input type="file" class="form-control-file" id="vcover" name="vcover" style="margin-left: 10%;">
-                </div>
-                <div style="padding-bottom: 2%;">
-                    <button type="reset" class="btn btn-secondary" style="width: 15%; height: 8%; margin-left: 10%;">Reset</button>
-                    <button type="submit" class="btn btn-primary" style="width: 15%; height: 8%; margin-left: 4%;">Submit</button>
-                </div>
-            </form>
+            </div>
+            
         </div>
 
     </div>
