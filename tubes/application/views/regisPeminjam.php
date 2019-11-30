@@ -15,8 +15,8 @@
       a { color: white; }
       .atas { height: 100px; background-color: #00A8A8; width: 60%; padding-top: 12px; margin-left: 20%; margin-top: 50px;}
       .middle { border : solid 2px white; padding-top : 30px; padding-left : 30px; padding-right : 30px; padding-bottom : 10px;
-                margin-left: 20%; width: 60%;   background-color: white; }
-      button { background-color: #00A8A8; color: white; border-radius: 3px; padding: 5px; width: 60px;
+                margin-left: 20%; width: 60%; height: 100%; background-color: white; }
+      button { background-color: #00A8A8; color: white; border-radius: 10px; padding: 5px; width: 60px;
                height: 35px; font-size: 10px; }
       button:hover { cursor: pointer; background-color: #13326D; }
       h1 { color : white;

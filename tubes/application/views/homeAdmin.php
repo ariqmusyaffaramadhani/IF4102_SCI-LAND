@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>src/js/bootstrap.js"></script>
     <style media="screen">
-        button { background-color: #00A8A8; color: white; border-radius: 5px; padding: 5px; width: 200px;
+        button { background-color: #00A8A8; color: white; border-radius: 10px; padding: 5px; width: 200px;
                  height: 100px; font-size: 25px; margin-top: 25px; }
         nav { background-color: #008B8B; }
         a { color: white;}

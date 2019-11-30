@@ -13,7 +13,7 @@
     <style media="screen">
       body { background-color: #E2F0F1; }
       .atas { height: 100px; background-color: #00A8A8; width: 40%; padding-top: 12px; margin-left: 30%; margin-top: 50px;}
-      button { background-color: #00A8A8; color: white; border-radius: 3px; padding: 5px; width: 70px; height: 35px; font-size: 12px; }
+      button { background-color: #00A8A8; color: white; border-radius: 10px; padding: 5px; width: 70px; height: 35px; font-size: 12px; }
       button:hover { cursor: pointer; background-color: #13326D; }
       .middle { border : solid 2px white; padding-top : 30px; padding-left : 30px; padding-right : 30px; padding-bottom : 10px;
          margin-left: 30%; width: 40%; background-color: white; }
