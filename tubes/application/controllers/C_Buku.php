@@ -7,7 +7,9 @@
     }
 
     public function index(){
+        // $data['judul'] = 'Daftar Buku Tersedia';
         $data['list_buku']=$this->M_Buku->get_all();
+        // $this->load->view('headerPjm',$data);
         $this->load->view('daftarBuku',$data);
     }
 
@@ -24,6 +26,11 @@
     public function detailBuku($id_buku){
       $data['detail'] = $this->M_Buku->get_buku($id_buku);
       $this->load->view('detailBuku',$data);
+    }
+
+    public function konfPinjam($id_buku) {
+      $data['buku'] = $this->M_Buku->get_buku($id_buku);
+      $this->load->view('konfPeminjaman',$data);
     }
 
   }

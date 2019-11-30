@@ -24,14 +24,14 @@
   <body>
     <nav class="navbar navbar-expand-sm">
         <a class="navbar-brand" href="<?php echo site_url('pjmController'); ?>">
-            <img src="<?php echo base_url(); ?>src/logo.png" style="width: 40px">
+            <img src="<?php echo base_url(); ?>src/logo.png" style="width: 40px; margin-top: -14px;">
         </a>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li class="active"><a href="<?php echo site_url('pjmController/listBuku') ?>">Daftar Buku</a></li>
-          <li class="active"><a href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a></li>
-          <li class="active"><a href="<?php echo site_url('pjmController/pageEdit'); ?>">Profil</a></li>
-          <li class="active"><a href="<?php echo site_url('pjmController/logout'); ?>">Keluar</a></li>
+        <li class="active"><a href="<?php echo site_url('pjmController'); ?>">Home</a></li>
+        <li class="active"><a href="<?php echo site_url('C_Buku') ?>">Daftar Buku</a></li>
+        <li class="active"><a href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a></li>
+        <li class="active"><a href="<?php echo site_url('pjmController/pageProfil'); ?>">Profil</a></li>
+        <li class="active"><a href="<?php echo site_url('pjmController/logout'); ?>">Keluar</a></li>
         </ul>
     </nav>
    <div class="atas">
@@ -46,15 +46,15 @@
          <form class="form-horizontal" action="" method="post">
            <div class="form-group">
              <label class="control-label col-sm-3" for="nama">Nama : </label>
-             <label class="col-sm-6"> <?php echo $namaPjm; ?> </label>
+             <label class="col-sm-6"> <?php echo $dataAkun['namaPjm']; ?> </label>
            </div>
            <div class="form-group">
              <label class="control-label col-sm-3" for="nama">E-mail : </label>
-             <label class="col-sm-6"> <?php echo $emailPjm; ?> </label>
+             <label class="col-sm-6"> <?php echo $dataAkun['emailPjm']; ?> </label>
            </div>
            <div class="form-group">
              <label class="control-label col-sm-3" for="nama">Alamat : </label>
-            <label class="col-sm-6"> <?php echo $alamatPjm; ?> </label>
+            <label class="col-sm-6"> <?php echo $dataAkun['alamatPjm']; ?> </label>
           </div>
         </form>
       </div>
@@ -67,7 +67,7 @@
       <div class="col-sm-4">
         <div class="card" style="width:400px">
           <div class="card-body">
-            <h4 class="card-title">Judul Buku<?php echo ?></h4>
+            <h4 class="card-title">Judul Buku<?php  ?></h4>
             <img class="card-img-bottom" src="" alt="Card image" style="width:100%">
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size:12px; padding-left:9px;">Kembalikan</button>
             <div class="modal fade" id="myModal" role="dialog">
@@ -90,7 +90,7 @@
       <div class="col-sm-4">
         <div class="card" style="width:400px">
           <div class="card-body">
-            <h4 class="card-title">Judul Buku<?php echo ?></h4>
+            <h4 class="card-title">Judul Buku<?php  ?></h4>
             <img class="card-img-bottom" src="" alt="Card image" style="width:100%">
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size:12px; padding-left:9px;">Kembalikan</button>
             <div class="modal fade" id="myModal" role="dialog">
@@ -113,7 +113,7 @@
       <div class="col-sm-4">
         <div class="card" style="width:400px">
           <div class="card-body">
-            <h4 class="card-title">Judul Buku<?php echo ?></h4>
+            <h4 class="card-title">Judul Buku<?php  ?></h4>
             <img class="card-img-bottom" src="" alt="Card image" style="width:100%">
             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size:12px; padding-left:9px;">Kembalikan</button>
             <div class="modal fade" id="myModal" role="dialog">

@@ -11,8 +11,8 @@
     <title>Pencarian</title>
     <style media="screen">
       body { background-color: #E2F0F1; }
-      h1 {margin-top : 160px; }
-      input { margin-left : 280px; width: 700px; border: none; line-height: 50px; border-bottom: 3px solid #DDD;
+      h1 {margin-top : 12%; font-family: serif; }
+      input { margin-left : 25%; width: 50%; border: none; line-height: 50px; border-bottom: 3px solid #DDD;
        	      padding: 10px; border-radius : 6px; }
       input:hover { outline: none; border-bottom : 3px solid #13326D; }
       button { background-color: #00A8A8; color: white; border-radius: 5px; padding: 5px; width: 100px; height: 50px;
@@ -27,13 +27,13 @@
          <a class="navbar-brand" href="<?php echo site_url('pjmController'); ?>">
             <img src="<?php echo base_url(); ?>src/logo.png" style="width: 40px; margin-top: -14px;">
          </a>
-         <ul class="nav navbar-nav">
-           <li class="active"><a href="#">Home</a></li>
-           <li class="active"><a href="<?php echo site_url('C_Buku') ?>">Daftar Buku</a></li>
-           <li class="active"><a href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a></li>
-           <li class="active"><a href="<?php echo site_url('pjmController/pageEdit'); ?>">Profil</a></li>
-           <li class="active"><a href="<?php echo site_url('pjmController/logout'); ?>">Keluar</a></li>
-         </ul>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="<?php echo site_url('pjmController'); ?>">Home</a></li>
+        <li class="active"><a href="<?php echo site_url('C_Buku') ?>">Daftar Buku</a></li>
+        <li class="active"><a href="<?php echo site_url('pjmController/cariBuku'); ?>">Pencarian Buku</a></li>
+        <li class="active"><a href="<?php echo site_url('pjmController/pageProfil'); ?>">Profil</a></li>
+        <li class="active"><a href="<?php echo site_url('pjmController/logout'); ?>">Keluar</a></li>
+      </ul>
      </nav>
       <form action="<?php echo site_url('C_buku/search'); ?>" method="post">
         <h1><center>Pencarian</center></h1>
