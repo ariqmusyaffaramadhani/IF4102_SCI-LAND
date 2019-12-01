@@ -53,8 +53,8 @@
       </tr>
       <?php endforeach ?>
     </table>
-    <center>
+    <!-- <center>
     <button type="button" href="<?php echo site_url('pjmController'); ?>">Kembali</button>
-    </center>
+    </center> -->
   </body>
 </html>
