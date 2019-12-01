@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2019 at 07:13 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Generation Time: Dec 01, 2019 at 09:08 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -69,7 +69,8 @@ CREATE TABLE `buku` (
 
 INSERT INTO `buku` (`id_buku`, `judul`, `penulis`, `penerbit`, `jhal`, `stock`, `sinopsis`, `imgpath`) VALUES
 ('1', 'Hydro coco', 'AWDLAJWDAWH', 'qwuho', 123, 123, '', 'default.jpeg'),
-('1001', 'laskar LGBT', 'Mamat', 'Erlanggoy', 123123, 123, '', '1001.png');
+('2', 'Harry Potter and The Goblet Of Fire', 'J.K Rowling', 'Bloomsbury', 500, 20, 'Kisah ini diawali dengan piala dunia Quidditch, sebuah pertandingan dengan sapu terbang yang sangat digemari Harry. Banyak hal yang membuatnya terkagum-kagum diawal buku ini, sampai-sampai kemunculan tanda Voldemort tidak begitu mempengaruhinya, apalagi k', '2.jpg'),
+('3', 'Harry Potter and Prisioner of Azkaban', 'J.K Rowling', 'Bloomsbury', 500, 10, 'Harry Potter learns that Sirius Black has escaped from the prison of Azkaban and is planning to kill him. Meanwhile, Hagrid is distraught when his hippogriff, Buckbeak, is sentenced to death.', '3.jpeg');
 
 -- --------------------------------------------------------
 
@@ -90,6 +91,7 @@ CREATE TABLE `peminjam` (
 
 INSERT INTO `peminjam` (`namaPjm`, `emailPjm`, `alamatPjm`, `passPjm`) VALUES
 ('asjad', 'adna@yahoo.com', 'jihad', '1233'),
+('ariq', 'ariq@gmail.com', 'adhyaksa 1 mantap', '123456'),
 ('a', 'b@gmail.com', 'cd', '12'),
 ('a', 'ba@gmail.com', 'aaa', '123'),
 ('Farah', 'fakhranakurnia@gmail.com', 'qewd', '1234'),
@@ -109,6 +111,14 @@ CREATE TABLE `peminjaman` (
   `tgl_kembali` date NOT NULL,
   `status` char(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `peminjaman`
+--
+
+INSERT INTO `peminjaman` (`id_pinjam`, `id_buku`, `emailPjm`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
+(2, '3', 'ariq@gmail.com', '2019-12-01', '2019-12-08', '1'),
+(3, '2', 'ariq@gmail.com', '2019-12-01', '2019-12-08', '1');
 
 --
 -- Indexes for dumped tables
@@ -133,6 +143,16 @@ ALTER TABLE `peminjaman`
   ADD PRIMARY KEY (`id_pinjam`),
   ADD KEY `emailPjm` (`emailPjm`),
   ADD KEY `id_buku` (`id_buku`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `peminjaman`
+--
+ALTER TABLE `peminjaman`
+  MODIFY `id_pinjam` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
