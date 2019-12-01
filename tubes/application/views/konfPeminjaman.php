@@ -47,29 +47,29 @@
           <form class="form-horizontal" action="<?php echo site_url('C_Buku/pinjam'); ?>" method="post">
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">Nama : </label>
-              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="namaPjm" value="<?php echo $dataAkun['namaPjm']; ?>"></input>
+              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" readonly name="namaPjm" value="<?php echo $dataAkun['namaPjm']; ?>"></input>
                 </label>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">E-mail : </label>
-              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="emailPjm" value="<?= $dataAkun['emailPjm']; ?>"></input>
+              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" readonly name="emailPjm" value="<?= $dataAkun['emailPjm']; ?>"></input>
                 </label>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">Buku yang dipinjam : </label>
               <label class="col-sm-5"> 
-              <input type="text" style="display:hidden; border:0px;" name="judul" value="<?php echo $buku['judul'] ?>">
+              <input type="text" style="display:hidden; border:0px; width: 500px;" readonly name="judul" value="<?php echo $buku['judul'] ?>">
               </label>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">Tanggal dipinjam : </label>
-              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="tgl_pinjam" value="<?php echo $today=date("Y-m-d"); ?>"> 
+              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" readonly name="tgl_pinjam" value="<?php echo $today=date("Y-m-d"); ?>"> 
               </input> </label>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">Tanggal dikembalikan : </label>
               <label class="col-sm-5"> 
-              <input type="text" style="display:hidden; border:0px;" name="tgl_kembali" value="<?php $back=strtotime("+7 days",strtotime($today)); 
+              <input type="text" style="display:hidden; border:0px;" readonly name="tgl_kembali" value="<?php $back=strtotime("+7 days",strtotime($today)); 
               echo $last=date("Y-m-d",$back); ?>"></input>
               </label>
             </div>
