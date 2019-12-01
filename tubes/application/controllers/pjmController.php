@@ -5,6 +5,7 @@ class pjmController extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('pjmModel');
+        $this->load->model('M_Pinjam');
     }
 
     public function index() {
@@ -36,8 +37,14 @@ class pjmController extends CI_Controller {
     public function pageProfil() {
         $data['judul'] = 'Profil';
         $data['dataAkun'] = $this->session->userdata('sessPjm');
-        // $this->load->view('headerPjm',$data);
-        $this->load->view('profile',$data);
+        
+        //get data buku join yang dipinjam
+        $email = $data['dataAkun']['emailPjm'];
+        $data['buku'] = $this->M_Pinjam->getbukujoin($email);
+
+        // var_dump($listbuku['buku']);
+        // die;
+        $this->load->view('profile', $data);
     }
 
     public function pageEdit() {
@@ -48,6 +55,7 @@ class pjmController extends CI_Controller {
         $this->session->sess_destroy();
         redirect('pjmController/login');
     }
+
 
     public function regisPeminjam() {
         $this->form_validation->set_rules('namaPjm','Nama','required');

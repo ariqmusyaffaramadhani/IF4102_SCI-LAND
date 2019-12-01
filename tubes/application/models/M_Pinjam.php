@@ -36,4 +36,15 @@ class M_Pinjam extends CI_Model {
 
     }
 
+    public function getbukujoin($email){
+    $this->db->select('*');
+    $this->db->from('peminjaman');
+    $this->db->join('buku','peminjaman.id_buku = buku.id_buku ');
+    $this->db->where('status','1');
+    $this->db->where('emailPjm',$email);
+
+    $query = $this->db->get();
+    return $query->result_array();
+    }
+
 }
