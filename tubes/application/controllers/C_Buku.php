@@ -37,8 +37,8 @@
     public function pinjam(){
 
       $data = $this->session->userdata('borrow');
-      // var_dump($data);
-      // die;
+
+
 
       $brw = array(
         "emailPjm" => $data['emailPjm'],
@@ -47,12 +47,42 @@
         "tgl_kembali" => $data['tgl_kembali'],
         "status" => "1"
       );
-      $this->M_Pinjam->addPinjam($brw);
-      $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
-        <b>Peminjaman Berhasil!</b>
-        </div>');
-        $konf['buku'] = $this->M_Buku->get_buku($data['id_buku']);
-        $this->load->view('konfPeminjaman',$konf);
+
+      $check = $this->M_Pinjam->cekPinjam($data['id_buku'],$data['emailPjm']);
+
+      if($check){
+        //true jika sudah pernah pinjam sebelumnya
+          $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert" style="width=30px;">
+          <b>Buku sudah anda pinjam dan belum dikembalikan!</b>
+          </div>');
+          $konf['buku'] = $this->M_Buku->get_buku($data['id_buku']);
+          $this->load->view('konfPeminjaman',$konf);
+      }
+
+      else{
+
+        $book = $this->M_Buku->get_buku($data['id_buku']);
+
+        if ($book['stock']==0){
+          $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert" style="width=30px;">
+          <b>Buku tidak tersedia, tidak bisa dipinjam!</b>
+          </div>');
+          $konf['buku'] = $this->M_Buku->get_buku($data['id_buku']);
+          $this->load->view('konfPeminjaman',$konf);
+        }
+        else{
+          $this->M_Pinjam->redStock($data['id_buku']);
+          $this->M_Pinjam->addPinjam($brw);
+          $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
+            <b>Peminjaman Berhasil!</b>
+            </div>');
+            $konf['buku'] = $this->M_Buku->get_buku($data['id_buku']);
+            $this->load->view('konfPeminjaman',$konf);
+        }
+
+
+
+      }
     }
 
   }
