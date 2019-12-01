@@ -42,6 +42,7 @@
     </div>
     <?php $dataAkun = $this->session->userdata('sessPjm'); ?>
       <div class="middle">
+      <?= $this->session->flashdata('message');?>
         <div>
           <form class="form-horizontal" action="<?php echo site_url('C_Buku/pinjam'); ?>" method="post">
             <div class="form-group">
@@ -94,7 +95,8 @@
               <input type="text" style="display:hidden; border:0px;" name="id_buku" value="<?php $buku['id_buku']; ?>"></input>
               </div>
               <form action="<?php echo site_url('/C_Buku/pinjam'); ?> ">
-                <button class="col-sm-2" type="submit" name="button">Konfirmasi</button></a>
+                <button type="submit" name="button">Konfirmasi</button>
+                <button type="submit" formaction="<?php echo site_url('pjmController'); ?>"> Keluar </button>
               </form>
               
           </div>

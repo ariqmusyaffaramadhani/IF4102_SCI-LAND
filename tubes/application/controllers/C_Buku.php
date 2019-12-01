@@ -48,6 +48,11 @@
         "status" => "1"
       );
       $this->M_Pinjam->addPinjam($brw);
+      $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
+        <b>Peminjaman Berhasil!</b>
+        </div>');
+        $konf['buku'] = $this->M_Buku->get_buku($data['id_buku']);
+        $this->load->view('konfPeminjaman',$konf);
     }
 
   }
