@@ -41,9 +41,6 @@ class pjmController extends CI_Controller {
         //get data buku join yang dipinjam
         $email = $data['dataAkun']['emailPjm'];
         $data['buku'] = $this->M_Pinjam->getbukujoin($email);
-
-        // var_dump($listbuku['buku']);
-        // die;
         $this->load->view('profile', $data);
     }
 

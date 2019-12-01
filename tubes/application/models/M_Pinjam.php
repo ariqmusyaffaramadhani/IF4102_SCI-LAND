@@ -20,8 +20,6 @@ class M_Pinjam extends CI_Model {
     
     
     public function addPinjam($data) {
-
-
         $this->db->insert('peminjaman',$data);
     }
     
@@ -47,4 +45,13 @@ class M_Pinjam extends CI_Model {
     return $query->result_array();
     }
 
-}
+    public function cekEmail($email){  //cek apakah user memninjam buku
+        $this->db->select('*');
+        $this->db->from('peminjaman');
+        $this->db->where('emailPjm',$email);
+        $this->db->where('status','1');
+        $query = $this->db->get();
+        return $query->result_array();
+    }//end func
+
+}//end controller
