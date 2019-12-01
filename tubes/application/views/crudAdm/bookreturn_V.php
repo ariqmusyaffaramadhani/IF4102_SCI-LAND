@@ -64,12 +64,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 
 
                             <tr>
-                            <td style="width: 10%;"> <img id="pic" width="100%" height="30%" src="<?= base_url('images/default.jpeg')?>" style="object-fit: contain;"></td>
-                            <td class="align-middle"> 
-                                <form action="#">
-                                    
-                                </form>    
-                            </td>
+                            <td colspan="5" align="center">not found</td>
                             </tr>
                     <?php } ?>
                 </tbody>
