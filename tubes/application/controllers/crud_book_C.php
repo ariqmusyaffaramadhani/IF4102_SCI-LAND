@@ -4,6 +4,9 @@
     public function __construct() {
       parent::__construct();
       $this->load->model('M_Buku');
+      $this->load->model('M_Pinjam');
+      $this->load->model('pjmModel');
+      $this->load->model('admModel');
       $this->load->library('form_validation');
     }
 
@@ -202,6 +205,54 @@ public function delbook(){
 
     }
 
+  //   public function retbookV(){
+  //       $result = null;
+  //       $data['title'] = "Pengembalian Buku";
+  //       $this->load->view('crudAdm/header', $data);  
+  //       $this->load->view('crudAdm/bookreturn_V',$result);      
+  //   // $data['buku'] = $this->M_Pinjam->getbukujoin($email);
+  // }
+    public function retbookV(){
+      $email = $this->input->post('remail',true);
+
+        if($email){
+          $result['books'] = $this->M_Pinjam->getbukujoin($email);
+          // var_dump($result);
+          // die;
+          $data['title'] = "Pengembalian Buku";
+          $this->load->view('crudAdm/header', $data);  
+          $this->load->view('crudAdm/bookreturn_V',$result);
+        }
+
+        else{
+          $dummy = array(
+            array(
+              'id_pinjam' =>null,
+              'judul' =>null,
+              'id_buku' => null,
+              'emailPjm' => null,
+              'tgl_pinjam' => null,
+              'tgl_kembali' => null,
+              'status' => null
+          )
+          );
+          //array on array, error gara2 akses index ke 0 sedangkan dia tidak memiliki index 0
+          $result['books'] = $dummy;
+          $data['title'] = "Pengembalian Buku";
+          $this->load->view('crudAdm/header', $data);  
+          $this->load->view('crudAdm/bookreturn_V',$result);
+        }
+
+      
+    // $data['buku'] = $this->M_Pinjam->getbukujoin($email);
+  }//end func
+
+  public function returnbook($id_pinjam){
+    $this->M_Pinjam->returnbookM($id_pinjam);
+    redirect('crud_book_C/retbookV');
+
   }
+
+  }//end controller
 
   ?>
