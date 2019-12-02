@@ -14,7 +14,7 @@
       .atas { height: 100px; background-color: #00A8A8; width: 60%; padding-top: 15px; margin-left: 20%; margin-top: 50px;}
       h1 { color: white; font-family: serif; }
       td { color: #13326D;}
-      img { padding-left: 100px;}
+      /* img { padding-left: 100px;} */
       button { background-color: #00A8A8; color: white; border-radius: 10px; padding: 5px; width: 70px;
               height: 45px; font-size: 10px; }
       button:hover { cursor: pointer; background-color: #13326D; }

@@ -22,12 +22,6 @@ class pjmController extends CI_Controller {
         $this->load->view('regisPeminjam');
     }
 
-    public function listBuku() {
-        // $data['judul'] = 'Daftar Buku Tersedia';
-        // $this->load->view('headerPjm',$data);
-        $this->load->view('daftarBuku');
-    }
-
     public function cariBuku() {
         // $data['judul'] = 'Pencarian';
         // $this->load->view('headerPjm',$data);
