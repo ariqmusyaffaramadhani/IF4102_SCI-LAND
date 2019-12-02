@@ -25,8 +25,9 @@
 
     public function addBook(){
 
-      $this->form_validation->set_rules('vidbook','id','required', [
-        'required' => 'id harus diisi!'
+      $this->form_validation->set_rules('vidbook','id','required|is_unique[buku.id_buku]', [
+        'required' => 'id harus diisi!',
+        'is_unique' => 'id sudah digunakan!'
       ]);
       $this->form_validation->set_rules('vjudul','judul','required', [
         'required' => 'judul harus diisi!'

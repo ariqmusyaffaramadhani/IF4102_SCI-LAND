@@ -10,11 +10,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>src/js/bootstrap.js"></script>
   <style media="screen">
-     body { background-color: #E2F0F1; }
+    body { background-color: #E2F0F1; }
     .atas { height: 100px; background-color: #00A8A8; width: 60%; padding-top: 3px; margin-left: 20%; margin-top: 5px;}
-    #pic { height : 200px; width : 190px; }
+    #pic { height : auto; width : 190px; }
     table { margin-left : 20%; background-color: white; width : 60%; }
-    td { padding-left : 20px; padding-right : 20px; }
+    td { padding : 20px 20px 20px 20px ; }
+
     button { background-color: #00A8A8; color: white; border-radius: 10px; padding: 5px; width: 70px; height: 45px; font-size: 12px; }
     button:hover { cursor: pointer; background-color: #13326D; }
     .middle { border : solid 2px white; padding-top : 30px; padding-left : 30px; padding-right : 30px; padding-bottom : 10px;
@@ -41,15 +42,15 @@
         <h1><center>Daftar Buku Tersedia</center></h1>
     </div>
     <div class="middle">
-
+    
+  
     </div>
     <table>
-
       <?php foreach($list_buku as $buku): ?>
-      <tr>
-        <td> <img id="pic" src="<?= base_url('images/').$buku['imgpath'];?>"></td>
+      <tr style="margin-top: 10px;">
+        <td> <img id="pic"  src="<?= base_url('images/').$buku['imgpath'];?>" style="object-fit: contain;" ></td>
         <td style="font-size:16px;"> <?= $buku['judul']; ?> </td>
-        <td><a href="<?php echo site_url(); ?>/C_Buku/detailBuku/<?= $buku['id_buku'] ?>"> <button type="button">Lihat Detail</button> </a></td>
+        <td><a href="<?php echo site_url(); ?>/C_Buku/detailBuku/<?= $buku['id_buku'] ?>"> <button type="button">Peminjaman</button> </a></td>
       </tr>
       <?php endforeach ?>
     </table>

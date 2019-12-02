@@ -87,11 +87,17 @@ class pjmController extends CI_Controller {
                 }
                 // pass salah
                 else {
+                    $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert" style="width=30px;">
+        <b>Email/Password salah!</b>
+        </div>');
                     redirect('pjmController/login');
                 }
             }
             // email salah
             else {
+                $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert" style="width=30px;">
+                <b>Email/Password salah!</b>
+                </div>');
                 redirect('pjmController/login');
             }
         }

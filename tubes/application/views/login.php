@@ -37,7 +37,10 @@
         </div>
         <div id="peminjam" class="tab-pane fade in active">
             <form action="<?php echo site_url('pjmController/loginPeminjam'); ?>" method="POST">
-              <div class="form-group">
+            <div style="margin : 6px 2px 2px 2px ;">
+              <?= $this->session->flashdata('message');?>  
+            </div>
+            <div class="form-group">
                   <label for="email">Email Peminjam:</label>
                   <input type="email" class="form-control" id="emailPjm" placeholder="Enter Email" name="emailPjm">
               </div>
@@ -53,7 +56,10 @@
         </div>
         <div id="admin" class="tab-pane fade in">
             <form action="<?php echo site_url('admController/loginAdmin'); ?>" method="POST">
-                <div class="form-group">
+            <div style="margin : 6px 2px 2px 2px ;">
+              <?= $this->session->flashdata('message');?>  
+            </div>    
+            <div class="form-group">
                     <label for="email">Email Admin:</label>
                     <input type="email" class="form-control" id="emailAdm" placeholder="Enter Email" name="emailAdm">
                 </div>
