@@ -42,6 +42,7 @@
     </div>
     <?php $dataAkun = $this->session->userdata('sessPjm'); ?>
       <div class="middle">
+      <?= $this->session->flashdata('message');?>
         <div>
           <form class="form-horizontal" action="<?php echo site_url('C_Buku/pinjam'); ?>" method="post">
             <div class="form-group">
@@ -62,14 +63,14 @@
             </div>
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">Tanggal dipinjam : </label>
-              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="tgl_pinjam" value="<?php echo $today=date("l".", "."d-m-Y"); ?>"> 
+              <label class="col-sm-5"><input type="text" style="display:hidden; border:0px;" name="tgl_pinjam" value="<?php echo $today=date("Y-m-d"); ?>"> 
               </input> </label>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-4" for="nama">Tanggal dikembalikan : </label>
               <label class="col-sm-5"> 
               <input type="text" style="display:hidden; border:0px;" name="tgl_kembali" value="<?php $back=strtotime("+7 days",strtotime($today)); 
-              echo $last=date("l".", "."d-m-Y",$back); ?>"></input>
+              echo $last=date("Y-m-d",$back); ?>"></input>
               </label>
             </div>
             <!-- <div class="form-group">
@@ -83,15 +84,20 @@
               "emailPjm" => $dataAkun['emailPjm'],
               "id_buku" => $buku['id_buku'],
               "tgl_pinjam" => $today,
-              "tgl_kembali" => $back,
+              "tgl_kembali" => $last,
               "status" => '1'
             ];
+
+            $this->session->set_userdata('borrow',$data);
           ?>
             <div class="form-group">
               <div class="col-sm-7">
               <input type="text" style="display:hidden; border:0px;" name="id_buku" value="<?php $buku['id_buku']; ?>"></input>
               </div>
-              <a href="<?php echo site_url(); ?>/C_Buku/pinjam/<?= $data ?>"><button class="col-sm-2" type="submit" name="button">Konfirmasi</button></a>
+              <form action="<?php echo site_url('/C_Buku/pinjam'); ?> ">
+                <button type="submit" name="button">Konfirmasi</button>
+                <button type="submit" formaction="<?php echo site_url('pjmController'); ?>"> Keluar </button>
+              </form>
               
           </div>
           </form>

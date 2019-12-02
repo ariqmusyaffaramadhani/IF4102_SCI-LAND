@@ -34,15 +34,25 @@
       $this->load->view('konfPeminjaman',$data);
     }
 
-    public function pinjam($data){
-      // $data = array(
-      //   "emailPjm" => $this->input->post('emailPjm',true),
-      //   "id_buku" => $this->input->post('id_buku',true),
-      //   "tgl_pinjam" => $this->input->post('tgl_pinjam',true),
-      //   "tgl_kembali" => $this->input->post('tgl_kembali',true),
-      //   "status" => "1"
-      // );
-      $this->M_Pinjam->addPinjam($data);
+    public function pinjam(){
+
+      $data = $this->session->userdata('borrow');
+      // var_dump($data);
+      // die;
+
+      $brw = array(
+        "emailPjm" => $data['emailPjm'],
+        "id_buku" => $data['id_buku'],
+        "tgl_pinjam" => $data['tgl_pinjam'],
+        "tgl_kembali" => $data['tgl_kembali'],
+        "status" => "1"
+      );
+      $this->M_Pinjam->addPinjam($brw);
+      $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
+        <b>Peminjaman Berhasil!</b>
+        </div>');
+        $konf['buku'] = $this->M_Buku->get_buku($data['id_buku']);
+        $this->load->view('konfPeminjaman',$konf);
     }
 
   }
