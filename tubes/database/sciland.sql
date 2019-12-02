@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2019 at 09:08 AM
+-- Generation Time: Dec 02, 2019 at 09:36 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.2.12
 
@@ -68,9 +68,9 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id_buku`, `judul`, `penulis`, `penerbit`, `jhal`, `stock`, `sinopsis`, `imgpath`) VALUES
-('1', 'Hydro coco', 'AWDLAJWDAWH', 'qwuho', 123, 123, '', 'default.jpeg'),
-('2', 'Harry Potter and The Goblet Of Fire', 'J.K Rowling', 'Bloomsbury', 500, 20, 'Kisah ini diawali dengan piala dunia Quidditch, sebuah pertandingan dengan sapu terbang yang sangat digemari Harry. Banyak hal yang membuatnya terkagum-kagum diawal buku ini, sampai-sampai kemunculan tanda Voldemort tidak begitu mempengaruhinya, apalagi k', '2.jpg'),
-('3', 'Harry Potter and Prisioner of Azkaban', 'J.K Rowling', 'Bloomsbury', 500, 10, 'Harry Potter learns that Sirius Black has escaped from the prison of Azkaban and is planning to kill him. Meanwhile, Hagrid is distraught when his hippogriff, Buckbeak, is sentenced to death.', '3.jpeg');
+('1', 'Hydro coco', 'AWDLAJWDAWH', 'qwuho', 123, 0, '', 'default.jpeg'),
+('2', 'Harry Potter and The Goblet Of Fire', 'J.K Rowling', 'Bloomsbury', 500, 19, 'Kisah ini diawali dengan piala dunia Quidditch, sebuah pertandingan dengan sapu terbang yang sangat digemari Harry. Banyak hal yang membuatnya terkagum-kagum diawal buku ini, sampai-sampai kemunculan tanda Voldemort tidak begitu mempengaruhinya, apalagi k', '2.jpg'),
+('3', 'Harry Potter and Prisioner of Azkaban', 'J.K Rowling', 'Bloomsbury', 500, 9, 'Harry Potter learns that Sirius Black has escaped from the prison of Azkaban and is planning to kill him. Meanwhile, Hagrid is distraught when his hippogriff, Buckbeak, is sentenced to death.', '3.jpeg');
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,7 @@ CREATE TABLE `peminjam` (
 
 INSERT INTO `peminjam` (`namaPjm`, `emailPjm`, `alamatPjm`, `passPjm`) VALUES
 ('asjad', 'adna@yahoo.com', 'jihad', '1233'),
-('ariq', 'ariq@gmail.com', 'adhyaksa 1 mantap', '123456'),
+('ariq mantap sekali', 'ariq@gmail.com', 'adhyaksa 12124', '123456'),
 ('a', 'b@gmail.com', 'cd', '12'),
 ('a', 'ba@gmail.com', 'aaa', '123'),
 ('Farah', 'fakhranakurnia@gmail.com', 'qewd', '1234'),
@@ -117,8 +117,13 @@ CREATE TABLE `peminjaman` (
 --
 
 INSERT INTO `peminjaman` (`id_pinjam`, `id_buku`, `emailPjm`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
-(2, '3', 'ariq@gmail.com', '2019-12-01', '2019-12-08', '1'),
-(3, '2', 'ariq@gmail.com', '2019-12-01', '2019-12-08', '1');
+(3, '2', 'ariq@gmail.com', '2019-12-01', '2019-12-08', '0'),
+(9, '3', 'ariq@gmail.com', '2019-12-01', '2019-12-08', '0'),
+(11, '2', 'ariq@gmail.com', '2019-12-02', '2019-12-09', '0'),
+(12, '2', 'ariq@gmail.com', '2019-12-02', '2019-12-09', '0'),
+(13, '3', 'ariq@gmail.com', '2019-12-02', '2019-12-09', '0'),
+(14, '2', 'ariq@gmail.com', '2019-12-02', '2019-12-09', '0'),
+(15, '3', 'ariq@gmail.com', '2019-12-02', '2019-12-09', '1');
 
 --
 -- Indexes for dumped tables
@@ -152,7 +157,7 @@ ALTER TABLE `peminjaman`
 -- AUTO_INCREMENT for table `peminjaman`
 --
 ALTER TABLE `peminjaman`
-  MODIFY `id_pinjam` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pinjam` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
