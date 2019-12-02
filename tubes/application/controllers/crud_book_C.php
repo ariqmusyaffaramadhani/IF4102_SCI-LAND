@@ -13,18 +13,18 @@
     public function index(){
       //$data['detail_buku']=$this->Buku_M->get_all();
       echo "ini index  crud";
-      
+
     }
 
     public function addBookV(){
       $data['title'] = "Tambah Data Buku";
-      $this->load->view('crudAdm/header', $data);  
+      $this->load->view('crudAdm/header', $data);
       $this->load->view('crudAdm/addBook_V');
     }
 
 
     public function addBook(){
-      
+
       $this->form_validation->set_rules('vidbook','id','required', [
         'required' => 'id harus diisi!'
       ]);
@@ -46,12 +46,12 @@
 
       if ($this->form_validation->run() == false){
         $data['title'] = "Tambah Data Buku";
-        $this->load->view('crudAdm/header', $data);  
+        $this->load->view('crudAdm/header', $data);
         $this->load->view('crudAdm/addBook_V');
       }
 
       else {
-        
+
         $upload = $_FILES['vcover']['name'];
 
         if ($upload){
@@ -60,7 +60,7 @@
           $config['file_name'] = $this->input->post('vidbook',true);
           $config['max_size'] = '5000';
           $config['overwrite'] = true;
-    
+
           $this->load->library('upload', $config);
 
           if ($this->upload->do_upload('vcover')){
@@ -75,7 +75,7 @@
         if(!$fname){
           $fname = "default.jpeg";
         }
-        
+
         $data = [
           "id_buku" => $this->input->post('vidbook',true),
           "judul" => $this->input->post('vjudul',true),
@@ -86,15 +86,15 @@
           "sinopsis" => $this->input->post('vsinopsis',true),
           "imgpath" => $fname
         ];
-  
+
         $this->M_Buku->addBuku($data);
         $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
         <b>Tambah buku sukses!</b>
         </div>');
-        
+
         redirect("crud_book_C/addBookV");
       }
-      
+
 
     }
 
@@ -104,7 +104,7 @@
       $bdata['books'] = $this->M_Buku->get_all();
 
       $data['title'] = "List Data Buku";
-      $this->load->view('crudAdm/header', $data);  
+      $this->load->view('crudAdm/header', $data);
       $this->load->view('crudAdm/viewBook_V',$bdata);
     }
 
@@ -118,8 +118,8 @@
           ];
           $this->session->set_userdata($dataaa);
           $data['title'] = "Ubah Data Buku";
-          $this->load->view('crudAdm/header', $data);  
-          $this->load->view('crudAdm/editBook_V',$result);      
+          $this->load->view('crudAdm/header', $data);
+          $this->load->view('crudAdm/editBook_V',$result);
       }
     }
 
@@ -146,7 +146,7 @@
         $result['book'] = $this->M_Buku->get_buku($id);
           if($result){
             $data['title'] = "Ubah Data Buku";
-            $this->load->view('crudAdm/header', $data);  
+            $this->load->view('crudAdm/header', $data);
             $this->load->view('crudAdm/editBook_V',$result);
           }
 
@@ -161,7 +161,7 @@
           "stock" => $this->input->post('estock',true),
           "sinopsis" => $this->input->post('esinopsis',true)
         ];
-  
+
         $this->M_Buku->updateBuku($id,$data);
         $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
         <b>Ubah data buku sukses!</b>
@@ -183,10 +183,10 @@
       ];
       $this->session->set_userdata($ddata);
       $data['title'] = "Hapus Data Buku";
-      $this->load->view('crudAdm/header', $data);  
-      $this->load->view('crudAdm/delBook_V',$result);   
-    }   
-  
+      $this->load->view('crudAdm/header', $data);
+      $this->load->view('crudAdm/delBook_V',$result);
+    }
+
 }
 
 public function delbook(){
@@ -208,8 +208,8 @@ public function delbook(){
   //   public function retbookV(){
   //       $result = null;
   //       $data['title'] = "Pengembalian Buku";
-  //       $this->load->view('crudAdm/header', $data);  
-  //       $this->load->view('crudAdm/bookreturn_V',$result);      
+  //       $this->load->view('crudAdm/header', $data);
+  //       $this->load->view('crudAdm/bookreturn_V',$result);
   //   // $data['buku'] = $this->M_Pinjam->getbukujoin($email);
   // }
     public function retbookV(){
@@ -220,7 +220,7 @@ public function delbook(){
           // var_dump($result);
           // die;
           $data['title'] = "Pengembalian Buku";
-          $this->load->view('crudAdm/header', $data);  
+          $this->load->view('crudAdm/header', $data);
           $this->load->view('crudAdm/bookreturn_V',$result);
         }
 
@@ -239,11 +239,11 @@ public function delbook(){
           //array on array, error gara2 akses index ke 0 sedangkan dia tidak memiliki index 0
           $result['books'] = $dummy;
           $data['title'] = "Pengembalian Buku";
-          $this->load->view('crudAdm/header', $data);  
+          $this->load->view('crudAdm/header', $data);
           $this->load->view('crudAdm/bookreturn_V',$result);
         }
 
-      
+
     // $data['buku'] = $this->M_Pinjam->getbukujoin($email);
   }//end func
 

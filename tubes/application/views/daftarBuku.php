@@ -44,7 +44,7 @@
 
     </div>
     <table>
-      
+
       <?php foreach($list_buku as $buku): ?>
       <tr>
         <td> <img id="pic" src="<?= base_url('images/').$buku['imgpath'];?>"></td>
@@ -53,8 +53,8 @@
       </tr>
       <?php endforeach ?>
     </table>
-    <center>
+    <!-- <center>
     <button type="button" href="<?php echo site_url('pjmController'); ?>">Kembali</button>
-    </center>
+    </center> -->
   </body>
 </html>
