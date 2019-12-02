@@ -44,7 +44,7 @@
 
     </div>
     <table>
-      
+
       <?php foreach($list_buku as $buku): ?>
       <tr>
         <td> <img id="pic" src="<?= base_url('images/').$buku['imgpath'];?>"></td>
