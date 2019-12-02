@@ -15,7 +15,7 @@
       nav { background-color: #008B8B; }
       a { color: white; }
      .middle { border : solid 2px white; padding-top : 30px; padding-left : 30px; padding-right : 30px; padding-bottom : 10px;
-        margin-left: 20%; width: 60%; height: 300px; background-color: white; }
+        margin-left: 20%; width: 60%; height: 400px; background-color: white; }
      button { background-color: #00A8A8; color: white; border-radius: 10px; padding: 5px; width: 70px; height: 45px; font-size: 12px; }
      button:hover { cursor: pointer; background-color: #13326D; }
      #pic { width: 100%; }
