@@ -40,7 +40,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </thead>
                 <tbody>
                     <!-- foreach here -->
-                    <?php if($books[0]['judul']){ ?>
+                    <?php 
+                    if ($books!=null) {
+                    if($books[0]['judul']){ ?>
 
                     <?php foreach($books as $book): ?>
                     <tr>
@@ -144,7 +146,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <tr>
                             <td colspan="5" align="center">not found</td>
                             </tr>
-                    <?php } ?>
+                    <?php } }
+                        else { ?>
+                            <tr>
+                                <td colspan="5" align="center">not found</td>
+                            </tr>
+                        <?php } ?>
                 </tbody>
             </table>
         </div>                        
