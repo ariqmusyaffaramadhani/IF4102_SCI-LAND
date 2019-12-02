@@ -18,10 +18,47 @@ class M_Pinjam extends CI_Model {
 
     }
 
-    public function returnbook($id_pinjam){
-        $this->db->where('id_pinjam', $id_pinjam);
-        
 
+    // public function incStock($id_buku){
+    // $this->db->select('*');
+    // $this->db->from('buku');
+    // $this->db->where('id_buku',$id_buku);
+    // $query = $this->db->get();
+    // $data = $query->row_array();
+    // $stock = $data['stock'];
+    // $stock = $stock + 1;
+    
+    // $this->db->where('id_buku',$id_buku);
+    // $this->db->set('stock',$stock);
+    // $this->db->update('buku');
+
+    // }
+
+    public function returnbookM($id_pinjam){
+        $this->db->where('id_pinjam', $id_pinjam);
+        $this->db->set('status',0);
+        $this->db->update('peminjaman');
+
+        $this->db->select('id_buku');
+        $this->db->from('peminjaman');
+        $this->db->where('id_pinjam',$id_pinjam);
+        $query = $this->db->get();
+        $data = $query->row_array();
+
+        $id_buku = $data['id_buku'];
+
+        $this->db->select('*');
+        $this->db->from('buku');
+        $this->db->where('id_buku',$id_buku);
+        $query = $this->db->get();
+        $data = $query->row_array();
+        $stock = $data['stock'];
+        $stock = $stock + 1;
+        
+        $this->db->where('id_buku',$id_buku);
+        $this->db->set('stock',$stock);
+        $this->db->update('buku');
+        
 
     }
     

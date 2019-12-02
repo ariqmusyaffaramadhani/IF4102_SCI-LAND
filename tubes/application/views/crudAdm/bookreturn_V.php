@@ -124,8 +124,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-        <form action="">
-            <button type="submit" class="btn btn-primary">Konfirmasi</button>
+        <form action="<?= base_url('crud_book_C/returnbook/').$book['id_pinjam']?>">
+            <button type="submit" class="btn btn-primary" onclick="return alert('Pengembalian Berhasil');">Konfirmasi</button>
         </form>
     </div>
     </div>

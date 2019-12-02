@@ -245,6 +245,12 @@ public function delbook(){
 
       
     // $data['buku'] = $this->M_Pinjam->getbukujoin($email);
+  }//end func
+
+  public function returnbook($id_pinjam){
+    $this->M_Pinjam->returnbookM($id_pinjam);
+    redirect('crud_book_C/retbookV');
+
   }
 
   }//end controller
