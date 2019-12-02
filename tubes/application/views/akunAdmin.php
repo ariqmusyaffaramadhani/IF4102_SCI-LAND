@@ -16,7 +16,7 @@
                 <a class="nav-link" href="<?php echo site_url('admController'); ?>">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo site_url('admController/editAdmin'); ?>">Edit Profil</a>
+                <a class="nav-link" href="<?php echo site_url('admController/editAkun'); ?>">Edit Profil</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo site_url('admController/logout'); ?>">Log Out</a>
@@ -25,15 +25,17 @@
     </nav>
     <div class="profil">
         <h1><center>Edit Profil</center></h1>
+        <?= $this->session->flashdata('message');?>
         <form method="post" action="<?= base_url('admController/editAdmin')?>">
             <input id="namaAdm" type="text" name="namaAdm" placeholder="Nama"><br>
             <input id="emailAdm" type="text" name="emailAdm" placeholder="Email"><br>
             <input id="almtAdm" type="text" name="alamatAdm" placeholder="Alamat"><br>
-        </form>
+        
         <center>
             <button style="margin-right: 40px;">Batal</button>
             <button>Simpan</button>
         </center>
+        </form>
     </div>
 </body>
 </html>

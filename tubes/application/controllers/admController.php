@@ -70,11 +70,17 @@ class admController extends CI_Controller {
                 }
                 // pass salah
                 else {
+                    $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert" style="width=30px;">
+                <b>Email/Password salah!</b>
+                </div>');
                     redirect('pjmController/login');
                 }
             }
             // email salah
             else {
+                $this->session->set_flashdata('message','<div class="alert alert-danger" role="alert" style="width=30px;">
+                <b>Email/Password salah!</b>
+                </div>');
                 redirect('pjmController/login');
             }
         }
@@ -86,20 +92,25 @@ class admController extends CI_Controller {
     public function editAdmin() {
         $dataAkun = $this->session->userdata('sessAdm');
 
-        $this->form_validation->set_rules('namaAdm','Nama','required');
+        $this->form_validation->set_rules('namaAdm','Nama','required',[
+            'required' => 'masuuk'
+        ]);
         $this->form_validation->set_rules('emailAdm','Email','required');
         $this->form_validation->set_rules('alamatAdm','Alamat','required');
-        $this->form_validation->set_rules('passAdm','Password','required');
 
         if ($this->form_validation->run()) {
             $new = array(
                 "namaAdm" => $this->input->post('namaAdm',true),
                 "emailAdm" => $this->input->post('emailAdm',true),
                 "alamatAdm" => $this->input->post('alamatAdm',true),
-                "passAdm" => $this->input->post('passAdm',true)
             );
             $this->admModel->editAdmin($dataAkun['emailAdm'],$new);
-            redirect('admController/home');
+
+            $this->session->set_flashdata('message','<div class="alert alert-success" role="alert" style="width=30px;">
+        <b>Ubah data profil sukses!</b>
+        </div>');
+
+            redirect('admController/editAkun');
 
         } else {
             redirect('admController/editAkun');
