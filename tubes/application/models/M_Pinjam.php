@@ -17,6 +17,13 @@ class M_Pinjam extends CI_Model {
     $this->db->update('buku');
 
     }
+
+    public function returnbook($id_pinjam){
+        $this->db->where('id_pinjam', $id_pinjam);
+        
+
+
+    }
     
     
     public function addPinjam($data) {
