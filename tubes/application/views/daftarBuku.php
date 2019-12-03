@@ -50,7 +50,7 @@
       <tr style="margin-top: 10px;">
         <td> <img id="pic"  src="<?= base_url('images/').$buku['imgpath'];?>" style="object-fit: contain;" ></td>
         <td style="font-size:16px;"> <?= $buku['judul']; ?> </td>
-        <td><a href="<?php echo site_url(); ?>/C_Buku/detailBuku/<?= $buku['id_buku'] ?>"> <button type="button">Peminjaman</button> </a></td>
+        <td><a href="<?php echo site_url(); ?>/C_Buku/detailBuku/<?= $buku['id_buku'] ?>"> <button type="button">Lihat Detail</button> </a></td>
       </tr>
       <?php endforeach ?>
     </table>

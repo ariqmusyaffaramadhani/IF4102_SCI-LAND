@@ -32,7 +32,7 @@
             <input id="almtAdm" type="text" name="alamatAdm" placeholder="Alamat"><br>
         
         <center>
-            <button style="margin-right: 40px;">Batal</button>
+            <button type="reset" style="margin-right: 40px;">Batal</button>
             <button>Simpan</button>
         </center>
         </form>
