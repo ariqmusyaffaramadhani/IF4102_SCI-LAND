@@ -68,6 +68,10 @@
                   <div class="prof_div2">Alamat </div>
                   <div class="prof_div"> <?= $dataAkun['alamatPjm'];?> </div>
                 </div>
+                <div class="row" style="width: 33%;  margin-top: 5px; margin-bottom: 2px; border-width: 1px;">
+                  <div class="prof_div2">Point </div>
+                  <div class="prof_div"> &nbsp;&nbsp;&nbsp;<?= $dataAkun['point'];?> </div>
+                </div>
 
               </div>
 

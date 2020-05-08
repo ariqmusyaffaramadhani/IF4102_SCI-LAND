@@ -37,10 +37,10 @@
     <div class="profil">
         <h1 style="font-family:serif; margin-top:50px;"><center><b>Ubah Profil</b></center></h1>
         <form method="post" action="<?php echo site_url('pjmController/editPeminjam') ?>">
-            <input type="text" name="namaPjm" placeholder="Nama"><br>
-            <input type="text" name="alamatPjm" placeholder="Alamat"><br>
-            <input type="email" name="emailPjm" placeholder="Email"><br>
-            <input type="password" name="passPjm" placeholder="Password"><br>
+            <input type="text" name="namaPjm" placeholder="Nama" value="<?= $namaPjm ?>"><br>
+            <input type="text" name="alamatPjm" placeholder="Alamat" value="<?= $alamatPjm ?>"><br>
+            <input type="email" name="emailPjm" placeholder="Email" value="<?= $emailPjm ?>"><br>
+            <input type="password" name="passPjm" placeholder="Password" value="<?= $passPjm ?>"><br>
         <center>
             <!-- <button style="margin-right: 40px;" >Batal</button> -->
             <button type="submit" style="margin-top:35px;">Simpan</button>

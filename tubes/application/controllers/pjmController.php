@@ -29,7 +29,7 @@ class pjmController extends CI_Controller {
     }
 
     public function pageProfil() {
-        $data['judul'] = 'Profil';
+        $data['judul'] = 'Profil Peminjam';
         $data['dataAkun'] = $this->session->userdata('sessPjm');
         
         //get data buku join yang dipinjam
@@ -39,7 +39,9 @@ class pjmController extends CI_Controller {
     }
 
     public function pageEdit() {
-        $this->load->view('ubahProfilPjm');
+        $data = $this->session->userdata('sessPjm');
+
+        $this->load->view('ubahProfilPjm', $data);
     }
 
     public function logout() {
@@ -78,7 +80,8 @@ class pjmController extends CI_Controller {
                         'namaPjm' => $dataPjm['namaPjm'],
                         'emailPjm' => $dataPjm['emailPjm'],
                         'alamatPjm' => $dataPjm['alamatPjm'],
-                        'passPjm' => $dataPjm['passPjm']
+                        'passPjm' => $dataPjm['passPjm'],
+                        'point' => $dataPjm['point']
                     );
                     $this->session->set_userdata('sessPjm',$sess_data);
                     redirect('pjmController');

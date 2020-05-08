@@ -19,34 +19,40 @@ class M_Pinjam extends CI_Model {
     }
 
 
-    // public function incStock($id_buku){
-    // $this->db->select('*');
-    // $this->db->from('buku');
-    // $this->db->where('id_buku',$id_buku);
-    // $query = $this->db->get();
-    // $data = $query->row_array();
-    // $stock = $data['stock'];
-    // $stock = $stock + 1;
-    
-    // $this->db->where('id_buku',$id_buku);
-    // $this->db->set('stock',$stock);
-    // $this->db->update('buku');
+    public function addPoint($email){
+        $this->db->select('*');
+        $this->db->from('peminjam');
+        $this->db->where('emailPjm',$email);
+        $query = $this->db->get();
+        $data = $query->row_array();
 
-    // }
+        $res = $data['point'];
+        $p = $res + 10;
+
+
+        $this->db->where('emailPjm', $email);
+        $this->db->set('point',$p);
+        $this->db->update('peminjam');
+        
+        $data2 = $this->session->userdata('sessPjm');
+        //$this->session->set_userdata('sessPjm',$sess_data);
+    }//endfunc
+
 
     public function returnbookM($id_pinjam){
         $this->db->where('id_pinjam', $id_pinjam);
         $this->db->set('status',0);
         $this->db->update('peminjaman');
 
-        $this->db->select('id_buku');
+        $this->db->select('*');
         $this->db->from('peminjaman');
         $this->db->where('id_pinjam',$id_pinjam);
         $query = $this->db->get();
         $data = $query->row_array();
 
         $id_buku = $data['id_buku'];
-
+        $email = $data['emailPjm'];
+        
         $this->db->select('*');
         $this->db->from('buku');
         $this->db->where('id_buku',$id_buku);
@@ -58,6 +64,8 @@ class M_Pinjam extends CI_Model {
         $this->db->where('id_buku',$id_buku);
         $this->db->set('stock',$stock);
         $this->db->update('buku');
+
+        $this->addPoint($email);
         
 
     }
